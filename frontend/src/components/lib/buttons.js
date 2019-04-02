@@ -9,7 +9,7 @@ import './library.css';
 // disabled, boolean
 // inline, boolean
 // name, string
-//size, "sm" | "md" | "lg"
+// size, "sm" | "md" | "lg"
 // sm: 36px, md: 40px, lg: 48px
 // type, "submit" | "button"
 
@@ -39,6 +39,11 @@ export function GreenButton({text, padding, transparent, disabled, inline, name,
 
 
 export function DarkGreenButton({ text, padding, transparent, disabled, inline, name, size, type, onClick }) {
+  if (transparent === true) {
+    transparent = 'transparent';
+  } else {
+    transparent = 'gray';
+  }
   return (
     <div className="greenButtonDark">
       <Box padding={padding}>
@@ -53,6 +58,11 @@ export function DarkGreenButton({ text, padding, transparent, disabled, inline, 
 }
 
 export function HoverButton({ text, padding, transparent, disabled, inline, name, size, type, onClick }) {
+  if (transparent === true) {
+    transparent = 'transparent';
+  } else {
+    transparent = 'gray';
+  }
   return (
     <div className="hoverButton">
       <Box padding={padding}>
