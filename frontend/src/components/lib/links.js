@@ -3,6 +3,12 @@ import { Box, Link, Text } from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 import './library.css';
 
+// The Link component allows you to show links on the page, open them in a new window, and change the color.
+
+// text, string
+// padding, bool
+// onClick, optional callback to override default href behavior
+
 export function LightGreenLink({text, padding, onClick}) {
   return (
     <div className="greenLink">

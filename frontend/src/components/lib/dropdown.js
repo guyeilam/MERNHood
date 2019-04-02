@@ -2,6 +2,12 @@ import React from 'react';
 import { Box, Link, Text } from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 
+// Dropdown that links each element to link provided in order
+
+// text = { [string, string2]}
+// links = { ['urlString1', urlString2]}
+
+
 export const DropDown = ({ links, text }) => {
   return (
     <div className="dropdown">
