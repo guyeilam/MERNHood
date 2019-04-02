@@ -1,4 +1,3 @@
-
 /* Button custom styles */
 
 .greenButton .gpV {
@@ -82,4 +81,38 @@
 .dropdown-content .wYR:hover {
   background-color: #e6f9f3 !important;
   box-sizing: border-box;
+}
+
+/* logo styles */
+
+/* import google font css */
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+
+.logo-sm {
+font-size: smaller; 
+}
+.logo-md {
+  font-size: medium;
+}
+.logo-lg {
+  font-size: larger;
+}
+
+.logo-day {
+  color: black;
+}
+
+.logo-night {
+  color: #21ce99;
+}
+
+.logo-day:hover {
+  color: #21ce99;
+}
+.logo-night:hover {
+  color: black;
+}
+
+.logo {
+  font-family: 'Ropa Sans', sans-serif;
 }
