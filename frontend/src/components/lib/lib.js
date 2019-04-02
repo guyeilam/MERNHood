@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button, Box, Link, Text } from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 import './library.css';
 import { DropDown } from './dropdown';
+import { GreenButton, DarkGreenButton, HoverButton } from './buttons'
+import {LightGreenLink, ColorLink} from './links'
 
 export default class Library extends React.Component {
   constructor(props) {
@@ -16,38 +17,16 @@ export default class Library extends React.Component {
         {/* Buttons */}
         <section>
           <h1>Buttons</h1>
-          <div className="greenButton">
-            <Box padding={2}>
-              <Button text='greenButton' inline />
-            </Box>
-          </div>
-          <div className="greenButtonDark">
-            <Box padding={2}>
-              <Button text='greenButtonDark' inline />
-            </Box>
-          </div>
-          <div className="hoverButton">
-            <Box padding={2}>
-              <Button text='hoverButton' inline />
-            </Box>
-          </div>
+          <GreenButton text="green button" padding={2} />
+          <DarkGreenButton text="dark green button" padding={2} />
+          <HoverButton text="hover button" padding={2} />
         </section>
 
         {/* Links */}
         <section>
           <h1>Links</h1>
-          <div className="greenLink">
-            <Link href="#">
-              <Box padding={2}>
-                <Text bold>lightGreen.com</Text>
-              </Box>
-            </Link>
-          </div>
-          <Link href="#">
-            <Box padding={2}>
-              <Text color='green' bold>darkGreen.com</Text>
-            </Box>
-          </Link>
+          <LightGreenLink text="lightGreen.com" padding={2} />
+          <ColorLink text="customColor.com" padding={2} color='red' />
         </section>
 
         {/* Dropdowns */}
