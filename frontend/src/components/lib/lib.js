@@ -17,9 +17,9 @@ export default class Library extends React.Component {
         {/* Buttons */}
         <section>
           <h1>Buttons</h1>
-          <GreenButton text="green button" padding={2} />
-          <DarkGreenButton text="dark green button" padding={2} />
-          <HoverButton text="hover button" padding={2} />
+          <GreenButton text="green button" padding={2} inline={true} />
+          <DarkGreenButton text="dark green button" padding={2} inline={true} />
+          <HoverButton text="hover button" padding={2} inline={true}/>
         </section>
 
         {/* Links */}
