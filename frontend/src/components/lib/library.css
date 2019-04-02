@@ -1,0 +1,85 @@
+
+/* Button custom styles */
+
+.greenButton .gpV {
+  background-color: #e6f9f3!important;
+}
+
+.greenButton  .pBj {
+  color: #21ce99 !important;
+}
+
+.greenButton .iyn:focus {
+  box-shadow: 0 0 0 4px #21ce99 !important;
+  outline: 0;
+}
+
+/* greenButton with dark bg and light text */
+
+.greenButtonDark .gpV {
+  background-color: #21ce99!important;
+}
+
+.greenButtonDark  .pBj {
+  color: #e6f9f3 !important;
+}
+
+.greenButtonDark .iyn:focus {
+  box-shadow: 0 0 0 4px #21ce99 !important;
+  outline: 0;
+}
+
+/* buttonShadow */
+.hoverButton .gpV:hover {
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.16);
+}
+/* roundedButton */
+
+/* link colors */
+
+.greenLink .pBj{
+  color: #21ce99 !important;
+}
+
+/* dropdowns */
+
+.dropDownTitle {
+  display: inline-block;
+  font-size: large;
+  font-weight: 900;
+  margin: auto;
+}
+
+.dopdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.11);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: #fff;
+  text-align: center;
+  align-items: center;
+  width: 214px;;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.07);
+  border-radius: 2px;
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s,visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.dropdown-content .wYR {
+  padding-left: 80px !important;
+}
+.dropdown-content .wYR:hover {
+  background-color: #e6f9f3 !important;
+  box-sizing: border-box;
+}
