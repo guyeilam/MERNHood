@@ -1,3 +1,9 @@
+/* global styles */
+
+.hidden {
+  display: none !important;
+}
+
 /* Button custom styles */
 
 .greenButton .gpV {
@@ -13,23 +19,33 @@
   outline: 0;
 }
 
+.greenButton .gpV:hover{
+  background-color: #d7e9e4 !important;
+}
+
 /* greenButton with dark bg and light text */
 
-.greenButtonDark .gpV {
+.greenButtondark .gpV {
   background-color: #21ce99!important;
 }
 
-.greenButtonDark  .pBj {
+.greenButtondark  .pBj {
   color: #e6f9f3 !important;
 }
 
-.greenButtonDark .iyn:focus {
+.greenButtondark .iyn:focus {
   box-shadow: 0 0 0 4px #21ce99 !important;
   outline: 0;
 }
 
+.greenButtondark .gpV:hover{
+  background-color: #1fb689 !important;
+}
+
 /* buttonShadow */
-.hoverButton .gpV:hover {
+.hoverButton .gpV:hover,
+.hoverButton .rTt:hover,
+.hoverButton .Jrn:hover {
   box-shadow: 0px 4px 8px rgba(0,0,0,0.16);
 }
 /* roundedButton */
@@ -42,45 +58,43 @@
 
 /* dropdowns */
 
-.dropDownTitle {
-  display: inline-block;
-  font-size: large;
-  font-weight: 900;
-  margin: auto;
-}
-
-.dopdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.11);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  background-color: #fff;
+.dropdown, .dropdown div {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
   text-align: center;
-  align-items: center;
-  width: 214px;;
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.07);
-  border-radius: 2px;
-  z-index: -1;
-  transition: all 0.3s ease-in-out 0s,visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 }
 
-.dropdown-content .wYR {
-  padding-left: 80px !important;
+.dd-title{
+  font-weight: bold;
+  max-width: fit-content;
 }
-.dropdown-content .wYR:hover {
-  background-color: #e6f9f3 !important;
-  box-sizing: border-box;
+
+.dd-title:hover {
+  border-bottom: 5px solid #21ce99;
+}
+
+.dd-links {
+  opacity: 1;
+  text-align: center;
+}
+
+.dd-ele {
+  padding-bottom: 10px;
+  margin-left: -40px;
+}
+
+.dropdown .DrD{
+  padding-top: 10px;
+  text-align: center !important;
+}
+
+.dd-links .mWe:hover{
+  color: #21ce99;
+}
+
+.dd-ele:hover {
+  background-color: #e6f9f3;
 }
 
 /* logo styles */
