@@ -3,10 +3,10 @@ import { Box, Link, Text } from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 import './library.css';
 
-export function LightGreenLink({text, padding}) {
+export function LightGreenLink({text, padding, onClick}) {
   return (
     <div className="greenLink">
-      <Link href="#">
+      <Link href="#" onClick={onClick}>
         <Box padding={padding}>
           <Text bold>{text}</Text>
         </Box>
@@ -14,9 +14,9 @@ export function LightGreenLink({text, padding}) {
     </div>
   )
 }
-export function ColorLink({text, padding, color}) {
+export function ColorLink({text, padding, color, onClick}) {
   return (
-    <Link href="#">
+    <Link href="#" onClick={onClick}>
       <Box padding={padding}>
         <Text color={color} bold>{text}</Text>
       </Box>
