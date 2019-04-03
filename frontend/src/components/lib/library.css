@@ -1,9 +1,5 @@
 /* global styles */
 
-.hidden {
-  display: none !important;
-}
-
 /* Button custom styles */
 
 .greenButton .gpV {
@@ -68,15 +64,37 @@
 .dd-title{
   font-weight: bold;
   max-width: fit-content;
+  border-bottom: 5px solid white;
 }
 
 .dd-title:hover {
   border-bottom: 5px solid #21ce99;
 }
 
+.dd-hidden{
+  visibility: hidden !important;
+}
+
+.dd-opened {
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.07);
+  border-radius: 2px;
+  transform: translateY(2em);
+}
+
 .dd-links {
+  margin-top: -40px;
+  width: 160px;
+  visibility: visible;
   opacity: 1;
-  text-align: center;
+  z-index: 1;
+  transition: all 0.3s ease-in-out 0s,visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  transition-delay: 0s,0s,0.3s;
+}
+
+.visible {
+  visibility: visible !important;
 }
 
 .dd-ele {

@@ -12,6 +12,7 @@ export default class DropDown extends React.Component {
     super(props)
     this.state = {hidden: true}
     this.createLinks = this.createLinks.bind(this);
+    this.closeDD = this.closeDD.bind(this);
     this.displayDD = this.displayDD.bind(this);
   }
 
@@ -36,24 +37,33 @@ export default class DropDown extends React.Component {
 
   displayDD(){
     this.setState(
-      {hidden: !this.state.hidden}
+      {hidden: false}
+    )
+  }
+
+  closeDD(){
+    this.setState(
+      { hidden: true }
     )
   }
 
   render() {
     this.createLinks();
-    let hidden;
-    if (this.state.hidden) { hidden = 'hidden' }
+    let visibility;
+    let state;
+    if (!this.state.hidden) { visibility = 'visible'; state = 'dd-opened' }
 
     return (
-      <div className="dropdown">
-        <p className="dd-title" onClick={this.displayDD}>DropDown</p>
-        <Box>
-          <ul className={`dd-links ${hidden}`}>
-            {this.comps}
-          </ul>
-        </Box>
-      </div>
+      <>
+        <div className="dropdown" >
+          <p className="dd-title" onMouseEnter={this.displayDD} >DropDown</p>
+          <Box>
+            <ul onMouseLeave={this.closeDD} className={`dd-links dd-hidden ${state} ${visibility}`}>
+              {this.comps}
+            </ul>
+          </Box>
+        </div>
+      </>
     )
   }
 }
