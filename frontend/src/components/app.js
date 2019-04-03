@@ -11,7 +11,6 @@ import './root.css';
 
 const App = () => (
   <div>
-    <NavBarContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPage} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
