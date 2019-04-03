@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import './signup_form.css';
+
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -57,7 +59,33 @@ class SignupForm extends React.Component {
       <div className="signup-container">
         <div className="signup-form-header">
           <div className="signup-form-header-logo">
-            
+            <img src="https://d2ue93q3u507c2.cloudfront.net/assets/robinhood/images/logo.png" alt="Logo" />        
+          </div>
+
+          <div className="signup-form-progress">
+            <div className="signup-progress-text-container">
+              <div className="signup-progress-text">
+                Account
+              </div>
+              <div className="signup-progress-text">
+                Basic Info
+              </div>
+              <div className="signup-progress-text">
+                Identity
+              </div>
+              <div className="signup-progress-text">
+                Funding
+              </div>
+              <div className="signup-progress-text">
+                Submit
+              </div>
+            </div>
+
+            <div className="signup-progress-bar">
+              <div className="signup-progress-bar-segment">
+                
+              </div>
+            </div>
           </div>
         </div>
 

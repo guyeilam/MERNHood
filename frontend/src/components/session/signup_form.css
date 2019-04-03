@@ -1,0 +1,35 @@
+.signup-container {
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.signup-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-form-header-logo {
+  width: 28px;
+  height: 38px;
+}
+
+.signup-form-progress {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-progress-text-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.signup-progress-text {
+  font-size: 22px;
+}
+
+.signup-progress-bar {
+  height: 50px;
+}
