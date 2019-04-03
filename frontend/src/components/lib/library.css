@@ -39,6 +39,12 @@
 }
 
 /* buttonShadow */
+.hoverButton .gpV,
+.hoverButton .rTt,
+.hoverButton .Jrn {
+  transition: background 300ms,box-shadow 300ms;
+}
+
 .hoverButton .gpV:hover,
 .hoverButton .rTt:hover,
 .hoverButton .Jrn:hover {

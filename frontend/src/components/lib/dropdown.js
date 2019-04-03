@@ -56,7 +56,7 @@ export default class DropDown extends React.Component {
     return (
       <>
         <div className="dropdown" >
-          <p className="dd-title" onMouseEnter={this.displayDD} >DropDown</p>
+          <p className="dd-title" onMouseEnter={this.displayDD} >{this.props.title}</p>
           <Box>
             <ul onMouseLeave={this.closeDD} className={`dd-links dd-hidden ${state} ${visibility}`}>
               {this.comps}

@@ -33,7 +33,12 @@ export default class Library extends React.Component {
         <section>
           <h1>Dropdowns</h1>
           <DropDown
+            title={"Hover Here"}
             text={['link1', 'link2', 'link3']}
+            links={['#', '#', '#']} />
+          <DropDown
+            title={"Another Dropdown"}
+            text={['link3', 'link4', 'link5']}
             links={['#', '#', '#']} />
         </section>
         <br></br>
