@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Link, Text } from 'gestalt';
+import { Link } from 'gestalt';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

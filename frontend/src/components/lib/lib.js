@@ -1,3 +1,4 @@
+// Component examples library
 import React from 'react';
 import 'gestalt/dist/gestalt.css';
 import './library.css';

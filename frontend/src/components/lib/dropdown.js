@@ -6,6 +6,7 @@ import 'gestalt/dist/gestalt.css';
 
 // text = { [string, string2]}
 // links = { ['urlString1', urlString2]}
+// title = "Some String"
 
 export default class DropDown extends React.Component {
   constructor(props){
@@ -36,15 +37,11 @@ export default class DropDown extends React.Component {
   };
 
   displayDD(){
-    this.setState(
-      {hidden: false}
-    )
+    this.setState({ hidden: false })
   }
 
   closeDD(){
-    this.setState(
-      { hidden: true }
-    )
+    this.setState({ hidden: true })
   }
 
   render() {
