@@ -154,3 +154,24 @@ font-size: smaller;
 .logo {
   font-family: 'Ropa Sans', sans-serif;
 }
+
+/* status styles */
+
+.status-badge- .mi- {
+  color: #21ce99 !important;
+  padding: 4px;
+}
+
+.status-badge- .bI_ {
+  background-color: #e6f9f3 !important;
+  border-color: #e6f9f3 !important;
+}
+
+.status-badge-dark .mi- {
+  color: #e6f9f3 !important;
+  padding: 4px;
+}
+.status-badge-dark .bI_ {
+  background-color: #21ce99 !important;
+  border-color: #21ce99 !important;
+}

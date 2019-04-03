@@ -7,6 +7,7 @@ import DropDown from './dropdown';
 import { ColorButton } from './buttons'
 import { LightGreenLink, ColorLink } from './links'
 import { Logo } from './logo'
+import Badge from './badge'
 
 export default class Library extends React.Component {
   constructor(props) {
@@ -92,6 +93,18 @@ export default class Library extends React.Component {
               </Sticky>
               <LightGreenLink text="lightGreen.com" padding={2} />
               <ColorLink text="customColor.com" padding={2} color='blue' />
+            </section>
+          </Box>
+          {/* Badges */}
+          <Box>
+            <section>
+              <Sticky top={0} dangerouslySetZIndex={{ __zIndex: 3 }}>
+                <Box alignItems="center" color="white" display="flex" height={40}>
+                  <Text bold>Badges</Text>
+                </Box>
+              </Sticky>
+              <Text>Some Text <Badge text={'status'}/></Text>
+              <Text>Some Text <Badge text={'status'} type={'dark'}/></Text>
             </section>
           </Box>
         </Box>
