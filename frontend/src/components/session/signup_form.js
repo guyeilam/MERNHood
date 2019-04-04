@@ -7,6 +7,8 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       password2: '',
@@ -82,34 +84,43 @@ class SignupForm extends React.Component {
             </div>
 
             <div className="signup-progress-bar">
-              <div className="signup-progress-bar-segment">
-                
-              </div>
+              <div className="signup-progress-bar-segment"></div>
             </div>
           </div>
         </div>
 
+        <div className="signup-form-container">
+          <div className="signup-form-main">
+            <div className="signup-form-header-text">
+              Make Your Money Move
+            </div>
+            <div className="signup-form-subheader">
+              Robinhood lets you invest in companies you love, commission-free.
+            </div>
+            <div className="signup-form">
+              <form onSubmit={this.handleSubmit}>
+                <div className="signup-form">
+                  <div className="signup-form-inputs">
+                    <div className="signup-form-inputs-row">
+                      <input type="text" value={this.state.firstName} onChange={this.update("firstName")} placeholder="First name" />
+                      <input type="text" value={this.state.lastName} onChange={this.update("lastName")} placeholder="Last name" />
+                    </div>
 
-
-
-
-
-
-          <div className="signup-form-container">
-            <form onSubmit={this.handleSubmit}>
-              <div className="signup-form">
-                <br/>
-                <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
-                <br/>
-                <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
-                <br/>
-                <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
-                <br/>
-                <input type="submit" value="Submit" />
-                {this.renderErrors()}
-              </div>
-            </form>
+                    <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                    <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
+                    <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
+                    <input type="submit" value="Submit" />
+                    {this.renderErrors()}
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
+
+          <div className="signup-form-sidebar">
+
+          </div>
+        </div>
       </div>
     );
   }

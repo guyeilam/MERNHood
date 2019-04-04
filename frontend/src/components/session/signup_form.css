@@ -7,7 +7,7 @@
 .signup-form-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 }
 
 .signup-form-header-logo {
@@ -31,5 +31,22 @@
 }
 
 .signup-progress-bar {
-  height: 50px;
+  height: 20px;
+}
+
+.signup-form-container {
+  display: flex;
+  margin-top: 40px;
+}
+
+.signup-form-main {
+  flex-basis: 60%;
+}
+
+.signup-form-sidebar {
+  flex-basis: 40%;
+}
+
+.signup-form-header-text {
+  font-size: 56px;
 }
