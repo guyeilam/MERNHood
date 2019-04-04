@@ -1,24 +1,20 @@
 import React from 'react'
 // components
 import { Logo } from './logo'
-import { DropDown } from './dropdown';
 
 export default function Showcase() {
   return (
     <div>
-      <h1>Hello World</h1>
-      {/* logos */}
-      <section className="logo-container">
-        <Logo title={"merhnood"} size="lg"/>
-      </section>
-      {/* dropdowns */}
-      <section>
-        <DropDown title={"Hover over me"} links={[
-          {url: "/", text: "home"},
-          {url: "/", text: "home"},
-          {url: "/", text: "home"},
-          ]} />
-      </section>
+      <h1>Component Library</h1>
+      <ul className="components-container">
+        {/* logos */}
+        <li className="logos-container">
+          <h1>Logos</h1>
+          <Logo title={"merhnood"} size="lg" />
+          {/* night theme */}
+          <Logo title={"merhnood"} size="lg" type="night" />
+        </li>
+      </ul>
     </div>
   )
 }

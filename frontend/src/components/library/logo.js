@@ -1,70 +1,53 @@
 import React from 'react'
 import Radium from 'radium'; // module that allows for inline styles
+
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BASE } from "./styles"
+
+// --- optional attributes ----
+// type = day | night, string
+// size = sm | md | lg, string
+// weight = normal | bold, string
+// --- ------------------- ----
 
 class LogoComponent extends React.Component {
-
   constructor(props){
     super(props);
     this.state = {};
   }
 
   getStyles() {
-    const status = {
-      day: "#21ce99",
-      night: "black",
-      hover: "lightGray"
-    };
-
     return {
-      base: {
-        position: "relative",
-        width: "10%",
-        height: 100,
-        padding: "5px",
-        borderRadius: "3px",
-        color: "black",
-        textAlign: "center",
-        day: {
-          ':hover':{
-            color: 'black',
-          },
-          color: status.day,
-        },
-        night: {
-          ':hover': {
-            color: 'black',
-          },
-          color: status.day
-        },
-        sm:{
-          fontSize: "smaller"
-        },
-        md:{
-          fontSize: "medium"
-        },
-        lg:{
-          fontSize: "larger"
-        },
-      },
+      base: BASE,
+      logo: {
+        maxWidth: "fit-content",
+        margin: "auto",
+        padding: 5,
+      }
     };
   }
 
   render() {
     const styles = this.getStyles();
-    const { type, title, size } = this.props;
+    const { type, title, size, weight } = this.props;
     return (
-      <Link to="/">
-        <text style={[styles.base, styles.base[type], styles.base[size]]}>
-          <FontAwesomeIcon icon="feather-alt" />
-          {title}
-        </text>
-      </Link>
+      <section className="logo-container" style={[styles.logo]}>
+        <Link to="/">
+          <p style={[
+            styles.base,
+            styles.base[type],
+            styles.base.textWeight[weight],
+            styles.base[size],]}>
+            <FontAwesomeIcon icon="feather-alt" />
+            {title}
+          </p>
+        </Link>
+      </section>
     );
   }
 }
 
-LogoComponent.defaultProps = { type: "day", size:  "md" };
+LogoComponent.defaultProps = { type: "day", size:  "md", weight: '', };
 
 export const Logo = Radium(LogoComponent);

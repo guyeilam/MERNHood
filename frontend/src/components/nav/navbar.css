@@ -1,0 +1,16 @@
+.nav-container{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  list-style: none;
+}
+
+.nav-container li {
+  margin-left: 10px;
+}
+
+.nav-links-container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}

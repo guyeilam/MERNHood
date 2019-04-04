@@ -1,7 +1,15 @@
 import React from "react";
 import Radium from "radium"; // module that allows for inline styles
 import { Link } from "react-router-dom";
+import { BASE } from "./styles"
 
+// --- optional attributes ----
+// title = text, string
+// type = day | night, string
+// links = [url, url2], strings
+// size = sm | md | lg, string
+// weight = normal | bold, string
+// --- ------------------- ----
 
 class DropDownComponent extends React.Component {
 
@@ -12,88 +20,55 @@ class DropDownComponent extends React.Component {
     this.closeDropDown = this.closeDropDown.bind(this);
   }
 
-  getStyles() {
-    const status = {
-      day: "#21ce99",
-      night: "black",
-      hover: "lightGray"
-    };
-
+  getDropDownStyles = () => {
     return {
-      base: {
-        maxWidth: "fit-content",
-        padding: "5px",
-        color: "black",
-        textAlign: "center",
-        fontFamily: "'Helvetica Neue', sans-serif",
-        borderBottom: "4px solid white",
-        day: {
-          ":hover": {
-            color: "black"
-          },
-          color: status.day
-        },
-        night: {
-          ":hover": {
-            color: "white"
-          },
-          color: status.day
-        }
+      base: BASE,
+      dropDown: {
+        paddingBottom: "5px",
+        borderBottom: "4px solid transparent",
       },
-      ul: {
-        position: "relative",
+      dropDownContainer: {
         display: "flex",
         flexDirection: "column",
-        maxWidth: 140,
-        justifyContent: "space-around",
-        listStyle: "none",
-        marginLeft: 20,
-        marginTop: -10,
-        transition: "all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s",
-        transitionDelay: "0s, 0s, 0.3s",
-        hidden: {
-          false: {
-            backgroundColor: "#fff",
-            position: "relative",
-            boxShadow: "0px 0px 8px rgba(0,0,0,0.07)",
-            borderRadius: 2,
-            transform: "translateY(2em)"
-          }
-        }
+        alignItems: "center",
+        margin: "auto",
+        maxWidth: "140px",
       },
-      title: {
+      dropDownTitle: {
         ":hover": {
           borderBottom: "4px solid #21ce99",
           cursor: "pointer"
         },
+        maxWidth: "fit-content",
         minWidth: 80,
-        marginLeft: 33,
       },
-      text: {
+      dropDownUl: {
+        position: "absolute",
+        top: 35,
+        display: "flex",
+        flexDirection: "column",
+        minWidth: 140,
+        justifyContent: "space-around",
+        listStyle: "none",
+        marginTop: -10,
+        transition: "all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s",
+        hidden: {
+          false: {
+            backgroundColor: "white",
+            boxShadow: "0px 0px 8px rgba(0,0,0,0.07)",
+            borderRadius: 2,
+            transform: "translateY(1em)"
+          }
+        }
+      },
+      dropDownText: {
+        maxWidth: "none",
+        width: "100%",
+        height: "100%",
         zIndex: 1,
-        marginLeft: 20
+        textAlign: "center",
+        justifyContent: "center",
       },
-      dims: {
-        sm: {
-          fontSize: "smaller"
-        },
-        md: {
-          fontSize: "medium"
-        },
-        lg: {
-          fontSize: "larger"
-        }
-      },
-      hidden: {
-        true: {
-          visibility: "hidden",
-          display: "none"
-        },
-        false: {
-          visibility: "visible",
-          display: "inline"
-        }
-      }
     };
   }
 
@@ -103,20 +78,24 @@ class DropDownComponent extends React.Component {
       components.push(
         <li key={(id+1)*.01}
           style={[
-            styles.text, styles.base,
+            styles.base,
             styles.base[type],
-            styles.dims[size],
-            styles.hidden]}>
-          <Link to={link.url}>
-            <text
-              key={id}
+            styles.base[size],
+            styles.base.textWeight['normal'],
+            styles.dropDown,
+            styles.dropDownText,
+            styles.base.hidden]}>
+          <Link to={link.url} style={[styles.dropDownText]}>
+            <p key={id}
               style={[
-                styles.text, styles.base,
+                styles.base,
                 styles.base[type],
-                styles.dims[size],
-                styles.hidden[this.state.hidden]]}>
-            {link.text}
-            </text>
+                styles.base[size],
+                styles.dropDownText,
+                styles.dropDown,
+                styles.base.hidden[this.state.hidden]]}>
+              {link.text}
+            </p>
           </Link>
         </li>
       )
@@ -133,19 +112,25 @@ class DropDownComponent extends React.Component {
   }
 
   render() {
-    const styles = this.getStyles();
-    const { title, type, links, size } = this.props;
+    const { title, type, links, size, weight } = this.props;
+    const styles = this.getDropDownStyles();
     const linkComponents = this.makeLinks(type, links, size, styles);
 
     return (
-      <section>
-        <p onMouseEnter={this.openDropDown}
-           onMouseDown={this.closeDropDown}
-           style={[styles.base, styles.title]}>
+      <section className="dd-container" style={[styles.dropDownContainer]}>
+        <p onMouseEnter={this.openDropDown} onMouseDown={this.closeDropDown}
+          style={[
+            styles.base,
+            styles.base[type],
+            styles.base.textWeight[weight],
+            styles.dropDown,
+            styles.dropDownTitle]}>
           {title}
         </p>
         <ul onMouseLeave={this.closeDropDown} 
-            style={[styles.ul, styles.ul.hidden[this.state.hidden]]}>
+            style={[
+              styles.dropDownUl,
+              styles.dropDownUl.hidden[this.state.hidden]]}>
           {linkComponents}
         </ul>
       </section>
@@ -153,6 +138,6 @@ class DropDownComponent extends React.Component {
   }
 }
 
-DropDownComponent.defaultProps = { type: "day", size: "md", links: [{url: ''}], };
+DropDownComponent.defaultProps = { type: "day", size: "md", links: [{url: ''}], weight: '', };
 
 export const DropDown = Radium(DropDownComponent);
