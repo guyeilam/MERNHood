@@ -11,6 +11,10 @@ import { setAuthToken } from './util/session_api_util';
 
 import { logout } from './actions/session_actions';
 
+// stylesheets
+import './styles/reset.css'
+import './styles/global.css'
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
