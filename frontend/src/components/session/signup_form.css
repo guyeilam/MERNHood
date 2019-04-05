@@ -7,7 +7,7 @@
 .signup-form-header {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .signup-form-header-logo {
@@ -49,4 +49,30 @@
 
 .signup-form-header-text {
   font-size: 56px;
+}
+
+.signup-form-subheader {
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.signup-form-inputs {
+  padding: 10px;
+}
+
+.signup-form-inputs-row {
+  display: flex;
+  margin: 30px 0px 30px 0px;
+}
+
+.signup-form-input {
+  padding: 10px 16px 10px 18px;
+  margin-right: 20px;
+  height: 26px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 4px;
+  color: #040d14;
+  border: 1px solid #b1bfc4;
+  width: 100%;
 }
