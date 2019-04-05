@@ -1,8 +1,12 @@
 
 // day / night / hover color theme controls
+export const COLORS = {
+  green: "#21ce99",
+}
+
 export const STATUS = {
   day: "black",
-  night: "#21ce99",
+  night: COLORS.green,
   hover: "lightGray"
 };
 
