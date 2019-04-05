@@ -17,6 +17,7 @@ export const BASE = {
   position: "relative",
   color: "black",
   textAlign: "center",
+  letterSpacing: "0.05em",
   day: {
     ':hover': {
       color: STATUS.night,

@@ -19,24 +19,26 @@ export default function Showcase() {
         {/* buttons */}
         <li className="buttons-container" style={{alignItems: "center"}}>
           <h1>Buttons</h1>
-          {/* small button */}
-          <br></br>
-          <Button shape="round" size="sm"/>
+          {/* small buttons */}
+            <br></br>
+            <Button shape="round" size="sm" title="small"/>
+            <br></br>
+            <Button shape="square" size="sm" title="square"/>
           {/* default button */}
-          <br></br>
-          <Button />
+            <br></br>
+            <Button />
           {/* disabled default button */}
-          <br></br>
-          <Button disabled />
+            <br></br>
+            <Button disabled title="disabled" />
           {/* custom color button */}
-          <br></br>
-          <Button color="#ffb6c1" />
-          <br></br>
+            <br></br>
+            <Button color="#ffb6c1" title="pink button"/>
           {/* square button */}
-          <Button shape="square"/>
+            <br></br>
+            <Button shape="square" title="square button"/>
           {/* large button */}
-          <br></br>
-          <Button shape="round" size="lg"/>
+            <br></br>
+            <Button shape="round" size="lg" title="large button"/>
         </li>
         {/* links */}
         <li className="links-container">

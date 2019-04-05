@@ -1,9 +1,7 @@
 import React from 'react'
 import Radium from 'radium'; // module that allows for inline styles
 
-import { Link } from "react-router-dom";
 import { BASE, COLORS } from "./styles"
-import { bindCallback } from 'rxjs';
 
 // --- optional attributes ----
 // type = day | night, string
@@ -14,6 +12,7 @@ import { bindCallback } from 'rxjs';
 // weight = thin | normal | bold, string
 // submit = function
 // disabled = boolean
+// onClick = function
 // --- ------------------- ----
 
 class ButtonComponent extends React.Component {
@@ -87,6 +86,7 @@ class ButtonComponent extends React.Component {
       <section className="site-button">
         <button 
         disabled={disabled}
+        onClick={e => this.handleClick(e, submit, disabled)}
         style={[
           styles.base,
           styles.base.textSize[size],
@@ -94,8 +94,7 @@ class ButtonComponent extends React.Component {
           styles.button,
           styles.disabled[disabled],
           styles.shape[shape],
-          styles.size[size]]}
-        onClick={ e => this.handleClick(e, submit, disabled)}>
+          styles.size[size]]}>
           {title}
         </button>
       </section>

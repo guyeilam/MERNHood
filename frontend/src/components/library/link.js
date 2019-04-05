@@ -7,6 +7,7 @@ import { BASE, COLORS } from "./styles"
 // --- optional attributes ---- string
 // type   = day | night  
 // color
+// hoverColor
 // title
 // size   = sm | md | lg 
 // weight = normal | bold
@@ -21,12 +22,15 @@ class LinkComponent extends React.Component {
     this.state = {}
   }
 
-  getStyles(color){
+  getStyles(color, hoverColor){
     return {
       base: BASE,
       link: {
         color: COLORS[color] || color,
         textAlign: "center",
+        ":hover": {
+          color: COLORS[hoverColor] || color,
+        },
       },
     };
   }
@@ -67,8 +71,8 @@ class LinkComponent extends React.Component {
 
 
   render() {
-    const { type, color, title, size, weight, http, to, image } = this.props;
-    const styles = this.getStyles(color);
+    const { type, color, hoverColor, title, size, weight, http, to, image } = this.props;
+    const styles = this.getStyles(color, hoverColor);
     let linkLocation = to;
     let linkText = this.getLinkText(styles, type, size, weight, title, image);
     let linkComp = this.internalLink(styles, linkLocation, linkText);
@@ -87,7 +91,7 @@ class LinkComponent extends React.Component {
 }
 
 LinkComponent.defaultProps = { 
-  type: "day", color: "", title: "Some Link", size: "md", weight: "normal", http: null, to:  "#", image: "",};
+  type: "day", color: "", hoverColor:"", title: "Some Link", size: "md", weight: "normal", http: null, to:  "#", image: "",};
 
 const LinkTo = Radium(LinkComponent);
 export default LinkTo;
