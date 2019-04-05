@@ -12,20 +12,36 @@ export default function Showcase() {
         {/* logos */}
         <li className="logos-container">
           <h1>Logos</h1>
-          <Logo title={"merhnood"} size="lg" />
+          <Logo title={"merhnood"} size="sm" />
           {/* night theme */}
           <Logo title={"merhnood"} size="lg" type="night" />
         </li>
         {/* buttons */}
-        <li>
+        <li className="buttons-container" style={{alignItems: "center"}}>
           <h1>Buttons</h1>
+          {/* small button */}
+          <br></br>
+          <Button shape="round" size="sm"/>
+          {/* default button */}
+          <br></br>
           <Button />
+          {/* disabled default button */}
+          <br></br>
+          <Button disabled />
+          {/* custom color button */}
+          <br></br>
+          <Button color="#ffb6c1" />
+          <br></br>
+          {/* square button */}
+          <Button shape="square"/>
+          {/* large button */}
+          <br></br>
+          <Button shape="round" size="lg"/>
         </li>
         {/* links */}
-        <li>
+        <li className="links-container">
           <h1>Links</h1>
-          <Link />
-          <Link to="/" title="Home" />
+          <Link to="/" title="Home"/>
           <Link http="http://www.google.com" title="External Link" />
         </li>
         {/* status badges */}

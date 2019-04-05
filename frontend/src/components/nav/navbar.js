@@ -38,8 +38,8 @@ class NavBarComponent extends React.Component {
               <li style={[styles.navLi]}>
                   <DropDown weight={"bold"} title={"More"} links={[
                     { url: "/components", text: "Components" },
-                    { url: "/", text: "Link2" },
-                    { url: "/", text: "Link3" },
+                    { url: "/", text: "Home" },
+                    { url: "/signup", text: "Signup" },
                   ]} />
               </li>
               <li style={[styles.navLi]}>
@@ -85,7 +85,7 @@ class NavBarComponent extends React.Component {
       return (
         <ul className="nav-container" style={[styles.navBarContainer]}>
           <li>
-            <Logo size='lg' type='day' title="mernhood"/>
+            <Logo size='md' type='day' title="mernhood"/>
           </li>
           <li>
             {this.getLinks(styles, type, weight)}

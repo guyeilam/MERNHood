@@ -41,12 +41,12 @@ class LogoComponent extends React.Component {
         title={title} 
         image={<FontAwesomeIcon 
         style={{paddingRight: 5}} 
-        icon="feather-alt" />} 
+        icon="feather-alt" />}
+        size={size} 
         style={[
           styles.logo,
           styles.base[type],
-          styles.base[weight],
-          styles.base[size]]} />
+          styles.base[weight],]} />
       </section>
     );
   }

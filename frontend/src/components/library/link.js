@@ -55,9 +55,9 @@ class LinkComponent extends React.Component {
     return (
       <p style={[
         styles.base[type],
-        styles.base[size],
         styles.base[weight],
         styles.link,
+        styles.base.textSize[size],
       ]}>
         {image}
         {title}
