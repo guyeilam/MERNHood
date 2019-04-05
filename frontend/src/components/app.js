@@ -13,9 +13,11 @@ import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faFeatherAlt)
 
+import './reset.css';
+import './main.css';
+
 const App = () => (
   <div>
-    <NavBarContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPage} />
         <AuthRoute exact path="/lib" component={ComponentLibrary} />
