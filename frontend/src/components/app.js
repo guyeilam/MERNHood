@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
-import NavBarContainer from './nav/navbar_container';
+import NavBar from './nav/navbar_container';
 
 import './reset.css';
 import './main.css';
@@ -18,6 +18,7 @@ library.add(faFeatherAlt)
 
 const App = () => (
   <div>
+    <NavBar />
     <Switch>
         <AuthRoute exact path="/" component={MainPage} />
         <AuthRoute exact path="/components" component={ComponentLibrary} />
