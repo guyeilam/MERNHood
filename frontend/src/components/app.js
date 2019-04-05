@@ -9,7 +9,7 @@ import './main.css';
 import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import ComponentLibrary from './lib/lib';
+import ComponentLibrary from './library/showcase';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +20,7 @@ const App = () => (
   <div>
     <Switch>
         <AuthRoute exact path="/" component={MainPage} />
-        <AuthRoute exact path="/lib" component={ComponentLibrary} />
+        <AuthRoute exact path="/components" component={ComponentLibrary} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>

@@ -9,10 +9,10 @@ import './library.css';
 // padding, bool
 // onClick, optional callback to override default href behavior
 
-export function LightGreenLink({text, padding, onClick}) {
+export function LightGreenLink({text, padding, onClick, to=''}) {
   return (
     <div className="greenLink">
-      <Link href="#" onClick={onClick}>
+      <Link href={`${to}`} onClick={onClick}>
         <Box padding={padding}>
           <Text bold>{text}</Text>
         </Box>
@@ -20,9 +20,9 @@ export function LightGreenLink({text, padding, onClick}) {
     </div>
   )
 }
-export function ColorLink({text, padding, color, onClick}) {
+export function ColorLink({text, padding, color, onClick, to=''}) {
   return (
-    <Link href="#" onClick={onClick}>
+    <Link href={`${to}`} onClick={onClick}>
       <Box padding={padding}>
         <Text color={color} bold>{text}</Text>
       </Box>
