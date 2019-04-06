@@ -3,6 +3,7 @@ import React from 'react'
 import { Logo } from './logo'
 import Link from './link'
 import Button from './button'
+import Box from "./box"
 
 export default function Showcase() {
   return (
@@ -45,6 +46,10 @@ export default function Showcase() {
           <h1>Links</h1>
           <Link to="/" title="Home"/>
           <Link http="http://www.google.com" title="External Link" />
+        </li>
+        {/* container */}
+        <li>
+          <Box/>>
         </li>
         {/* status badges */}
       </ul>
