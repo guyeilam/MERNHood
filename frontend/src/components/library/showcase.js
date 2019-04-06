@@ -7,7 +7,7 @@ import Box from "./box"
 
 export default function Showcase() {
   return (
-    <div>
+    <Box column>
       <h1>Component Library</h1>
       <ul className="components-container">
         {/* logos */}
@@ -20,6 +20,7 @@ export default function Showcase() {
         {/* buttons */}
         <li className="buttons-container" style={{alignItems: "center"}}>
           <h1>Buttons</h1>
+          <Box>
           {/* small buttons */}
             <br></br>
             <Button shape="round" size="sm" title="small"/>
@@ -40,6 +41,7 @@ export default function Showcase() {
           {/* large button */}
             <br></br>
             <Button shape="round" size="lg" title="large button"/>
+          </Box>
         </li>
         {/* links */}
         <li className="links-container">
@@ -47,12 +49,8 @@ export default function Showcase() {
           <Link to="/" title="Home"/>
           <Link http="http://www.google.com" title="External Link" />
         </li>
-        {/* container */}
-        <li>
-          <Box/>>
-        </li>
         {/* status badges */}
       </ul>
-    </div>
+    </Box>
   )
 }
