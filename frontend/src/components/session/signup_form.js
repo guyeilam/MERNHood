@@ -54,7 +54,8 @@ class SignupForm extends React.Component {
       lastName: newState.lastName,
       email: newState.email,
       password: newState.password,
-      password2: newState.password2
+      password2: newState.password2,
+      step: (this.state.step + 1)
     });
   }
 
@@ -83,6 +84,11 @@ class SignupForm extends React.Component {
       case 1:
         formComponent = <AccountInfoForm fieldValues={fieldValues}
                                           saveValues={this.saveValues} />;
+        break;
+      case 2:
+        formComponent = (
+          <div className="test"></div>
+        );
         break;
       default:
         break;

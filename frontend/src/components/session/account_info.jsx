@@ -22,7 +22,8 @@ class AccountInfoForm extends Component {
     });
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const fieldValues = Object.assign({}, this.state);
     this.props.saveValues(fieldValues);
   }
@@ -40,7 +41,7 @@ class AccountInfoForm extends Component {
           Robinhood lets you invest in companies you love, commission-free.
         </div>
         <div className="signup-form">
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={(e) => this.handleSubmit(e)}>
             <div className="signup-form">
               <div className="signup-form-inputs">
                 <div className="signup-form-inputs-row">
