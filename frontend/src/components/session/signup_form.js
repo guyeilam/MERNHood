@@ -19,6 +19,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.saveValues = this.saveValues.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,6 +47,17 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history); 
   }
 
+  saveValues(fields) {
+    let newState = Object.assign({}, this.state, fields);
+    this.setState({
+      firstName: newState.firstName,
+      lastName: newState.lastName,
+      email: newState.email,
+      password: newState.password,
+      password2: newState.password2
+    });
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -59,10 +71,18 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    let fieldValues = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      password2: '',
+    }
     let formComponent;
     switch (this.state.step) {
       case 1:
-        formComponent = <AccountInfoForm />;
+        formComponent = <AccountInfoForm fieldValues={fieldValues}
+                                          saveValues={this.saveValues} />;
         break;
       default:
         break;
