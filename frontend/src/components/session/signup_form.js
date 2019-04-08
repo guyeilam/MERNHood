@@ -84,6 +84,10 @@ class SignupForm extends React.Component {
             </div>
 
             <div className="signup-progress-bar">
+              <div className="signup-progress-bar-segment active"></div>
+              <div className="signup-progress-bar-segment"></div>
+              <div className="signup-progress-bar-segment"></div>
+              <div className="signup-progress-bar-segment"></div>
               <div className="signup-progress-bar-segment"></div>
             </div>
           </div>

@@ -11,10 +11,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFeatherAlt)
-
 import './reset.css';
 import './main.css';
+
+library.add(faFeatherAlt)
 
 const App = () => (
   <div>
