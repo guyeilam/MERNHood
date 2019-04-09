@@ -130,7 +130,9 @@ class SignupForm extends React.Component {
         </div>
 
         <div className="signup-form-container">
+          
           {formComponent}
+
           <div className="signup-form-sidebar">
 
           </div>
