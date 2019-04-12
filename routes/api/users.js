@@ -34,6 +34,8 @@ router.post('/register', (req, res) => {
       } else {
         // Otherwise create a new user
         const newUser = new User({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
           email: req.body.email,
           password: req.body.password
         })
@@ -44,7 +46,7 @@ router.post('/register', (req, res) => {
             newUser.password = hash;
             newUser.save()
               .then(user => {
-                const payload = { id: user.id, email: user.email };
+                const payload = { id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName };
 
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                   res.json({

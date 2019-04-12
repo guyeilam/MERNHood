@@ -91,3 +91,7 @@
 .signup-progress-bar-segment.active {
   background: #21ce99;
 }
+
+.inactive-text {
+  color: #b1bfc4;
+}

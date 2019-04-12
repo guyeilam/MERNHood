@@ -9,8 +9,7 @@
     "server": "nodemon app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "test": "jest"
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +27,6 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "jest": "^24.7.1",
     "nodemon": "^1.18.10"
   },
   "proxy": "http://0.0.0.0:5000"

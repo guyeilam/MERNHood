@@ -39,11 +39,12 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-
     this.props.signup(user, this.props.history); 
   }
 
@@ -87,7 +88,9 @@ class SignupForm extends React.Component {
         break;
       case 2:
         formComponent = (
-          <div className="test"></div>
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <input type="submit" value="Submit" /> 
+          </form>
         );
         break;
       default:
@@ -102,33 +105,34 @@ class SignupForm extends React.Component {
 
           <div className="signup-form-progress">
             <div className="signup-progress-text-container">
-              <div className="signup-progress-text">
+              <div className={ this.state.step === 1 ? `signup-progress-text` : `signup-progress-text inactive-text` }>
                 Account
               </div>
-              <div className="signup-progress-text">
+              <div className="signup-progress-text inactive-text">
                 Basic Info
               </div>
-              <div className="signup-progress-text">
+              <div className="signup-progress-text inactive-text">
                 Identity
               </div>
-              <div className="signup-progress-text">
+              <div className="signup-progress-text inactive-text">
                 Funding
               </div>
-              <div className="signup-progress-text">
+              <div className={ this.state.step === 2 ? `signup-progress-text` : `signup-progress-text inactive-text` }>
                 Submit
               </div>
             </div>
 
             <div className="signup-progress-bar">
               <div className="signup-progress-bar-segment active"></div>
-              <div className="signup-progress-bar-segment"></div>
-              <div className="signup-progress-bar-segment"></div>
-              <div className="signup-progress-bar-segment"></div>
+              <div className={ this.state.step > 1 ? `signup-progress-bar-segment active` : `signup-progress-bar-segment` } ></div>
+              <div className={ this.state.step > 1 ? `signup-progress-bar-segment active` : `signup-progress-bar-segment` } ></div>
+              <div className={ this.state.step > 1 ? `signup-progress-bar-segment active` : `signup-progress-bar-segment` } ></div>
+              <div className={ this.state.step > 1 ? `signup-progress-bar-segment active` : `signup-progress-bar-segment` } ></div>
               <div className="signup-progress-bar-segment"></div>
             </div>
           </div>
         </div>
-
+        {this.renderErrors()}
         <div className="signup-form-container">
           
           {formComponent}
