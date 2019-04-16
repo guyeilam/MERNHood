@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 // components
-import { Logo } from './logo'
-import Link from './link'
-import Button from './button'
-import Box from "./box"
+// import { Logo } from './logo';
+import Logo from "./styledLogo";
+// import Link from './link'
+import Link from "./styledLink";
+import Button from './button';
+import Box from "./box";
+import Text from "./styledText"
 
 export default function Showcase() {
   return (
@@ -13,9 +16,12 @@ export default function Showcase() {
         {/* logos */}
         <li className="logos-container">
           <h1>Logos</h1>
-          <Logo title={"merhnood"} size="sm" />
+          <Box>
+            <Logo>mernhood</Logo>
+          </Box>
+          {/* <Logo title={"merhnood"} size="sm" /> */}
           {/* night theme */}
-          <Logo title={"merhnood"} size="lg" type="night" />
+          {/* <Logo title={"merhnood"} size="lg" type="night" /> */}
         </li>
         {/* buttons */}
         <li className="buttons-container" style={{alignItems: "center"}}>
@@ -46,10 +52,27 @@ export default function Showcase() {
         {/* links */}
         <li className="links-container">
           <h1>Links</h1>
-          <Link to="/" title="Home"/>
-          <Link http="http://www.google.com" title="External Link" />
+          {/* <Link to="/" title="Home"/> */}
+          {/* <Link http="http://www.google.com" title="External Link" /> */}
+        <Box width="50%">
+            <Link to="/">
+              Home
+          </Link>
+            <Link to="/components">
+              Components
+          </Link>
+        </Box>
         </li>
         {/* status badges */}
+        {/* styled text */}
+        <li>
+          <h1>Styled Text</h1>
+          <Box width="50%">
+            <Text color="lightBlue">Hello World</Text>
+            <Text color="green">Hello World</Text>
+            <Text weight="bold">Hello World</Text>
+          </Box>
+        </li>
       </ul>
     </Box>
   )

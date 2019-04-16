@@ -35,6 +35,7 @@ class LogoComponent extends React.Component {
   render() {
     const styles = this.getStyles();
     const { type, title, size, weight } = this.props;
+    console.log(styles.base[type]);
     return (
       <section className="logo-container" style={[styles.logo]}>
         <Link to="/" 
