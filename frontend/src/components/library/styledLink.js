@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { COLORS } from "./styles";
 
 export default function StyledLink({ children, to, className ,color }) {
-  const activeClassName = 'nav-item-active'
-  const NavItem = styled(Link).attrs({activeClassName})`
+  const activeclassname = 'nav-item-active'
+  const NavItem = styled(Link).attrs({activeclassname})`
     color: black;
     :hover {
       color: ${COLORS["green"]};
     }
 
-  &.${activeClassName} {
+  &.${activeclassname} {
   }
 `;
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from "radium"; // module that allows for inline styles
 
 import { Link } from 'react-router-dom'
-import { Logo } from '../library/logo'
+import Logo from '../library/styledLogo'
 import { BASE } from '../library/styles'
 import { DropDown } from '../library/dropdown';
 
@@ -85,7 +85,7 @@ class NavBarComponent extends React.Component {
       return (
         <ul className="nav-container" style={[styles.navBarContainer]}>
           <li>
-            <Logo size='md' type='day' title="mernhood"/>
+            <Logo>mernhood</Logo>
           </li>
           <li>
             {this.getLinks(styles, type, weight)}

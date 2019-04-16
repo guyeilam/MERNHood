@@ -8,7 +8,7 @@ function Text(props) {
   const StyledP = styled.p`
 
     color: ${COLORS[props.color] ?
-      `${COLORS[props.color]}` : `${props.color}`};
+          `${COLORS[props.color]}` : `${props.color}`};
     font-size: ${props.size} ;
     font-weight: ${props.weight};
     
