@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function Logo({ children }) {
 
   return (
-    <Box row>
+    <Box fontSize="large" padding="8px" row>
       <Link to="/">
-        <FontAwesomeIcon style={{ paddingRight: 5 }} icon="feather-alt" />
+        <FontAwesomeIcon style={{ paddingRight: 5, paddingTop: 14 }} icon="feather-alt" />
         {children}
       </Link>
     </Box>

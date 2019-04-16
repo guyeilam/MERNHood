@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import Logo from '../library/styledLogo'
 import { BASE } from '../library/styles'
 import { DropDown } from '../library/dropdown';
+import Button from '../library/button';
+import { relative } from 'path';
 
 // --- optional attributes ----
 // type = day | night, string
@@ -42,14 +44,14 @@ class NavBarComponent extends React.Component {
                     { url: "/signup", text: "Signup" },
                   ]} />
               </li>
-              <li style={[styles.navLi]}>
+              <li style={{padding: 18, position: 'relative', left: '50vw'}}>
                 <Link to={'/login'}>
                   <p key={"navlink1"} style={[styles.base[type]]}>Login</p>
                 </Link>
               </li>
-              <li style={[styles.navLi]}>
+              <li style={{ padding: 5, position: 'relative', left: '50vw'}}>
                 <Link to={'/signup'}>
-                  <p key={"navlink2"} style={[styles.base[type]]}>Signup</p>
+                  <Button title="Sign Up" />
                 </Link>
               </li>
             </ul>
@@ -69,7 +71,7 @@ class NavBarComponent extends React.Component {
       },
       navLi: {
         marginLeft: 10,
-        padding: 6.6,
+        padding: 18,
       },
       navLinksContainer: {
         display: "flex",

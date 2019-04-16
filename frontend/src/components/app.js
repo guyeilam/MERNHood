@@ -17,7 +17,7 @@ import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
 library.add(faFeatherAlt)
 
 const App = () => (
-  <div>
+  <div style={{maxWidth: '80vw', margin: 'auto'}}>
     <NavBar />
     <Switch>
         <AuthRoute exact path="/" component={MainPage} />

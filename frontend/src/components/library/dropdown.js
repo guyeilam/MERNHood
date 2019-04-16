@@ -44,7 +44,7 @@ class DropDownComponent extends React.Component {
       },
       dropDownUl: {
         position: "absolute",
-        top: 35,
+        top: 45,
         display: "flex",
         flexDirection: "column",
         minWidth: 140,
