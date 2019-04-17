@@ -6,7 +6,8 @@ import Logo from '../library/styledLogo'
 import { BASE } from '../library/styles'
 import { DropDown } from '../library/dropdown';
 import Button from '../library/button';
-import { relative } from 'path';
+import StyledSearchBar from "../library/styledSearchBar"
+import Box from "../library/box";
 
 // --- optional attributes ----
 // type = day | night, string
@@ -29,9 +30,13 @@ class NavBarComponent extends React.Component {
   getLinks(styles, type, weight) {
       if (this.props.loggedIn) {
         return (
-            <div>
-                <button onClick={this.logoutUser}>Logout</button>
-            </div>
+          <Box padding="18px">
+          <ul className="logged-in-nav-container" style={{display: "flex"}}>
+              <li style={{marginLeft: 10, minWidth: 350}}><StyledSearchBar /></li>
+              <li style={{ position: 'relative', left: '50vw'}}><button onClick={this.logoutUser}>Logout</button></li>
+          </ul>
+          </Box>
+            
         );
       } else {
         return (

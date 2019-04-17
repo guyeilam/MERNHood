@@ -1,25 +1,44 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import { withStyles } from '@material-ui/core/styles';
 import styled from 'styled-components'
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+  },
+  paper: {
+    marginRight: theme.spacing.unit * 2,
+    minWidth: 100,
+  },
+});
 
 
 class SimpleMenu extends React.Component {
   state = {
-    anchorEl: null,
+    open: false,
   };
 
-  handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget });
+  handleToggle = () => {
+    this.setState(state => ({ open: !state.open }));
   };
 
-  handleClose = () => {
-    this.setState({ anchorEl: null });
+  handleClose = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+
+    this.setState({ open: false });
   };
 
   render() {
-    const { anchorEl } = this.state;
+    const { open } = this.state;
     const StyledMenuItem = styled(MenuItem)`
         justify-content: center !important;
         :hover {
@@ -33,38 +52,38 @@ class SimpleMenu extends React.Component {
     return (
       <div>
         <Button
-          aria-owns={anchorEl ? 'simple-menu' : undefined}
-          aria-haspopup="true"
-          onClick={this.handleClick}
-        >
-          Open Menu
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={this.handleClose}
-          PaperProps={{
-            style: {
-              marginTop: 50,
-              borderTop: '5px solid #21ce99',
-              minWidth: 140,
-              maxHeight: 150,
-            }
+          buttonRef={node => {
+            this.anchorEl = node;
           }}
-  >
-          <StyledMenuItem onClick={this.handleClose}>Item1</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item2</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item3</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item4</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item5</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item6</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item7</StyledMenuItem>
-          <StyledMenuItem onClick={this.handleClose}>Item8</StyledMenuItem>
-        </Menu>
+          aria-owns={open ? 'menu-list-grow' : undefined}
+          aria-haspopup="true"
+          onClick={this.handleToggle}
+        >
+          Toggle Menu Grow
+        </Button>
+        <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id="menu-list-grow"
+              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={this.handleClose}>
+                  <MenuList 
+                    style={{ minWidth: 200, borderTop: '5px solid #21ce99',}}>
+                    <StyledMenuItem onClick={this.handleClose}>Item1</StyledMenuItem>
+                    <StyledMenuItem onClick={this.handleClose}>Item2</StyledMenuItem>
+                    <StyledMenuItem onClick={this.handleClose}>Item3</StyledMenuItem>
+                    <StyledMenuItem onClick={this.handleClose}>Item4</StyledMenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
       </div>
     );
   }
 }
-
-export default SimpleMenu;
+export default withStyles(styles)(SimpleMenu);

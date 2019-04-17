@@ -72,6 +72,7 @@ export default function Showcase() {
           </Box>
         </li>
         {/* status badges */}
+        {/* search bar */}
         {/* styled text */}
         <li>
           <h1>Styled Text</h1>
