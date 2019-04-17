@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from "radium"; // module that allows for inline styles
 
-import { Link } from 'react-router-dom'
+import Link from '../library/styledLink'
 import Logo from '../library/styledLogo'
 import { BASE } from '../library/styles'
 import { DropDown } from '../library/dropdown';
@@ -13,6 +13,7 @@ import Box from "../library/box";
 // type = day | night, string
 // weight = normal | bold, string
 // --- ------------------- ----
+
 
 class NavBarComponent extends React.Component {
   constructor(props) {
@@ -33,6 +34,21 @@ class NavBarComponent extends React.Component {
           <Box padding="18px">
           <ul className="logged-in-nav-container" style={{display: "flex"}}>
               <li style={{marginLeft: 10, minWidth: 350}}><StyledSearchBar /></li>
+              <li style={{ padding:2, paddingLeft: 10}}>
+                <Link to={'/'}>
+                  <p id="loggedInLink1">Home</p>
+                </Link>
+              </li>
+              <li style={{ padding:2, paddingLeft: 10}}>
+                <Link to={'/'}>
+                  <p id="loggedInLink2">Notifications</p>
+                </Link>
+              </li>
+              <li style={{ padding:2, paddingLeft: 10}}>
+                <Link to={'/'}>
+                  <p id="loggedInLink3">Account</p>
+                </Link>
+              </li>
               <li style={{ position: 'relative', left: '50vw'}}><button onClick={this.logoutUser}>Logout</button></li>
           </ul>
           </Box>
