@@ -7,6 +7,7 @@ import Link from "./styledLink";
 import Button from './button';
 import Box from "./box";
 import Text from "./styledText"
+import DropDown from "./styledDropDown"
 
 export default function Showcase() {
   return (
@@ -62,6 +63,13 @@ export default function Showcase() {
               Components
           </Link>
         </Box>
+        </li>
+        {/* dropdown menu */}
+        <li>
+          <h1>DropDown Component</h1>
+          <Box>
+            <DropDown />
+          </Box>
         </li>
         {/* status badges */}
         {/* styled text */}
