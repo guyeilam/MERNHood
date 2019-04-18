@@ -44,7 +44,7 @@ class DropDownComponent extends React.Component {
       },
       dropDownUl: {
         position: "absolute",
-        top: 35,
+        top: 45,
         display: "flex",
         flexDirection: "column",
         minWidth: 140,
@@ -80,7 +80,7 @@ class DropDownComponent extends React.Component {
           style={[
             styles.base,
             styles.base[type],
-            styles.base[size],
+            styles.base.textSize[size],
             styles.base.textWeight['normal'],
             styles.dropDown,
             styles.dropDownText,
@@ -90,7 +90,7 @@ class DropDownComponent extends React.Component {
               style={[
                 styles.base,
                 styles.base[type],
-                styles.base[size],
+                styles.base.textSize[size],
                 styles.dropDownText,
                 styles.dropDown,
                 styles.base.hidden[this.state.hidden]]}>

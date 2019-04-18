@@ -1,12 +1,13 @@
 import React from 'react'
 import Radium from 'radium'; // module that allows for inline styles
 
-import { Link } from "react-router-dom";
+import  Link  from "./link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BASE } from "./styles"
 
 // --- optional attributes ----
 // type = day | night, string
+// title
 // size = sm | md | lg, string
 // weight = normal | bold, string
 // --- ------------------- ----
@@ -24,6 +25,9 @@ class LogoComponent extends React.Component {
         maxWidth: "fit-content",
         margin: "auto",
         padding: 5,
+        display: "flex",
+        flexDirection: "row",
+        justContent: "center",
       }
     };
   }
@@ -33,16 +37,16 @@ class LogoComponent extends React.Component {
     const { type, title, size, weight } = this.props;
     return (
       <section className="logo-container" style={[styles.logo]}>
-        <Link to="/">
-          <p style={[
-            styles.base,
-            styles.base[type],
-            styles.base.textWeight[weight],
-            styles.base[size],]}>
-            <FontAwesomeIcon icon="feather-alt" />
-            {title}
-          </p>
-        </Link>
+        <Link to="/" 
+        title={title} 
+        image={<FontAwesomeIcon 
+        style={{paddingRight: 5}} 
+        icon="feather-alt" />}
+        size={size} 
+        style={[
+          styles.logo,
+          styles.base[type],
+          styles.base[weight],]} />
       </section>
     );
   }
