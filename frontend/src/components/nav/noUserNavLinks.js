@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../library/button';
+import Button from '../library/styledButton';
 import Link from '../library/styledLink'
 import DropDown from '../library/styledDropDown';
 import styled from 'styled-components'
@@ -31,7 +31,9 @@ export default function userNavLinks() {
         </ListItem>
         <ListItem style={{ padding: 5, position: 'relative', left: '50vw' }}>
           <Link to={'/signup'}>
-            <Button title="Sign Up" />
+            <Button>
+              <p>Sign Up</p>
+            </Button>
           </Link>
         </ListItem>
       </NavLinksContainer>
