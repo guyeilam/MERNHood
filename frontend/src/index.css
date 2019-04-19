@@ -21,7 +21,7 @@ This is because storybook only looks at index.css by default */
 /* CSS RESET */
 /* ******************* */
 
-html, body, header, nav, h1, a,
+/* html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
@@ -55,12 +55,12 @@ input[type="email"],
 input[type="text"],
 input[type="submit"],
 textarea,
-button {
+button { */
   /*
   Get rid of native styling. Read more here:
   http://css-tricks.com/almanac/properties/a/appearance/
   */
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
 }
 
@@ -71,17 +71,17 @@ input[type="submit"] {
 
 strong {
   font-weight: 700;
-}
+} */
 /* ******************* */
 /* MAIN CSS */
 /* ******************* */
 
-@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+/* @import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
 
 #root {
   /* font-family: 'Ropa Sans', sans-serif; */
-  font-family: 'Oswald', sans-serif;
+  /* font-family: 'Oswald', sans-serif;
   font-size: medium;
-  font-weight: lighter;
-}
+  font-weight: lighter; */
+/* } */
