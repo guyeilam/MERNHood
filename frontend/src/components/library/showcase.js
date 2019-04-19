@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 // components
 // import { Logo } from './logo';
 import Logo from "./styledLogo";
 // import Link from './link'
 import Link from "./styledLink";
-import Button from './button';
+import Button from "./button";
 import Box from "./box";
-import Text from "./styledText"
-import DropDown from "./styledDropDown"
+import Text from "./styledText";
+import DropDown from "./styledDropDown";
 
 export default function Showcase() {
   return (
@@ -25,29 +25,29 @@ export default function Showcase() {
           {/* <Logo title={"merhnood"} size="lg" type="night" /> */}
         </li>
         {/* buttons */}
-        <li className="buttons-container" style={{alignItems: "center"}}>
+        <li className="buttons-container" style={{ alignItems: "center" }}>
           <h1>Buttons</h1>
           <Box>
-          {/* small buttons */}
-            <br></br>
-            <Button shape="round" size="sm" title="small"/>
-            <br></br>
-            <Button shape="square" size="sm" title="square"/>
-          {/* default button */}
-            <br></br>
+            {/* small buttons */}
+            <br />
+            <Button shape="round" size="sm" title="small" />
+            <br />
+            <Button shape="square" size="sm" title="square" />
+            {/* default button */}
+            <br />
             <Button />
-          {/* disabled default button */}
-            <br></br>
+            {/* disabled default button */}
+            <br />
             <Button disabled title="disabled" />
-          {/* custom color button */}
-            <br></br>
-            <Button color="#ffb6c1" title="pink button"/>
-          {/* square button */}
-            <br></br>
-            <Button shape="square" title="square button"/>
-          {/* large button */}
-            <br></br>
-            <Button shape="round" size="lg" title="large button"/>
+            {/* custom color button */}
+            <br />
+            <Button color="#ffb6c1" title="pink button" />
+            {/* square button */}
+            <br />
+            <Button shape="square" title="square button" />
+            {/* large button */}
+            <br />
+            <Button shape="round" size="lg" title="large button" />
           </Box>
         </li>
         {/* links */}
@@ -55,14 +55,10 @@ export default function Showcase() {
           <h1>Links</h1>
           {/* <Link to="/" title="Home"/> */}
           {/* <Link http="http://www.google.com" title="External Link" /> */}
-        <Box width="50%">
-            <Link to="/">
-              Home
-          </Link>
-            <Link to="/components">
-              Components
-          </Link>
-        </Box>
+          <Box width="50%">
+            <Link to="/">Home</Link>
+            <Link to="/components">Components</Link>
+          </Box>
         </li>
         {/* dropdown menu */}
         <li>
@@ -88,5 +84,5 @@ export default function Showcase() {
         </li>
       </ul>
     </Box>
-  )
+  );
 }

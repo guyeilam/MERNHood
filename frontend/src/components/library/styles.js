@@ -1,10 +1,9 @@
-
 // day / night / hover color theme controls
 export const COLORS = {
   green: "#21ce99",
   lightGreen: "rgba(33, 206, 153, 0.57)",
-  xLightGreen: "#a1e9d27a",
-}
+  xLightGreen: "#a1e9d27a"
+};
 
 export const STATUS = {
   day: "black",
@@ -19,14 +18,14 @@ export const BASE = {
   textAlign: "center",
   letterSpacing: "0.05em",
   day: {
-    ':hover': {
-      color: STATUS.night,
+    ":hover": {
+      color: STATUS.night
     },
-    color: STATUS.day,
+    color: STATUS.day
   },
   night: {
-    ':hover': {
-      color: STATUS.day,
+    ":hover": {
+      color: STATUS.day
     },
     color: STATUS.night
   },
@@ -39,17 +38,17 @@ export const BASE = {
     },
     lg: {
       fontSize: "x-large"
-    },
+    }
   },
-  textWeight:{
+  textWeight: {
     bold: {
-      fontWeight: "600",
+      fontWeight: "600"
     },
     normal: {
-      fontWeight: "normal",
+      fontWeight: "normal"
     },
     thin: {
-      fontWeight: "thin",
+      fontWeight: "thin"
     }
   },
   hidden: {
@@ -62,4 +61,4 @@ export const BASE = {
       display: "inline"
     }
   }
-}
+};

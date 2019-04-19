@@ -1,17 +1,17 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
-import './signup_form.css';
+import "./signup_form.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      password2: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      password2: "",
       errors: {}
     };
 
@@ -21,16 +21,17 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+      this.props.history.push("/login");
     }
 
-    this.setState({errors: nextProps.errors})
+    this.setState({ errors: nextProps.errors });
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
   }
 
   handleSubmit(e) {
@@ -41,16 +42,14 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user, this.props.history);
   }
 
   renderErrors() {
-    return(
+    return (
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
+          <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
       </ul>
     );
@@ -61,39 +60,30 @@ class SignupForm extends React.Component {
       <div className="signup-container">
         <div className="signup-form-header">
           <div className="signup-form-header-logo">
-            <img src="https://d2ue93q3u507c2.cloudfront.net/assets/robinhood/images/logo.png" alt="Logo" />        
+            <img
+              src="https://d2ue93q3u507c2.cloudfront.net/assets/robinhood/images/logo.png"
+              alt="Logo"
+            />
           </div>
 
           <div className="signup-form-progress">
             <div className="signup-progress-text-container">
-              <div className="signup-progress-text">
-                Account
-              </div>
-              <div className="signup-progress-text">
-                Basic Info
-              </div>
-              <div className="signup-progress-text">
-                Identity
-              </div>
-              <div className="signup-progress-text">
-                Funding
-              </div>
-              <div className="signup-progress-text">
-                Submit
-              </div>
+              <div className="signup-progress-text">Account</div>
+              <div className="signup-progress-text">Basic Info</div>
+              <div className="signup-progress-text">Identity</div>
+              <div className="signup-progress-text">Funding</div>
+              <div className="signup-progress-text">Submit</div>
             </div>
 
             <div className="signup-progress-bar">
-              <div className="signup-progress-bar-segment"></div>
+              <div className="signup-progress-bar-segment" />
             </div>
           </div>
         </div>
 
         <div className="signup-form-container">
           <div className="signup-form-main">
-            <div className="signup-form-header-text">
-              Make Your Money Move
-            </div>
+            <div className="signup-form-header-text">Make Your Money Move</div>
             <div className="signup-form-subheader">
               Robinhood lets you invest in companies you love, commission-free.
             </div>
@@ -102,17 +92,47 @@ class SignupForm extends React.Component {
                 <div className="signup-form">
                   <div className="signup-form-inputs">
                     <div className="signup-form-inputs-row">
-                      <input type="text" className="signup-form-input" value={this.state.firstName} onChange={this.update("firstName")} placeholder="First name" />
-                      <input type="text" className="signup-form-input" value={this.state.lastName} onChange={this.update("lastName")} placeholder="Last name" />
+                      <input
+                        type="text"
+                        className="signup-form-input"
+                        value={this.state.firstName}
+                        onChange={this.update("firstName")}
+                        placeholder="First name"
+                      />
+                      <input
+                        type="text"
+                        className="signup-form-input"
+                        value={this.state.lastName}
+                        onChange={this.update("lastName")}
+                        placeholder="Last name"
+                      />
                     </div>
                     <div className="signup-form-inputs-row">
-                      <input type="text" className="signup-form-input" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                      <input
+                        type="text"
+                        className="signup-form-input"
+                        value={this.state.email}
+                        onChange={this.update("email")}
+                        placeholder="Email"
+                      />
                     </div>
                     <div className="signup-form-inputs-row">
-                      <input type="password" className="signup-form-input" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
+                      <input
+                        type="password"
+                        className="signup-form-input"
+                        value={this.state.password}
+                        onChange={this.update("password")}
+                        placeholder="Password"
+                      />
                     </div>
                     <div className="signup-form-inputs-row">
-                      <input type="password" className="signup-form-input" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
+                      <input
+                        type="password"
+                        className="signup-form-input"
+                        value={this.state.password2}
+                        onChange={this.update("password2")}
+                        placeholder="Confirm Password"
+                      />
                     </div>
                     <div className="signup-form-inputs-row">
                       <input type="submit" value="Submit" />
@@ -124,9 +144,7 @@ class SignupForm extends React.Component {
             </div>
           </div>
 
-          <div className="signup-form-sidebar">
-
-          </div>
+          <div className="signup-form-sidebar" />
         </div>
       </div>
     );

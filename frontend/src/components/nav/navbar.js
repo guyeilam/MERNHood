@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components'
-import Logo from '../library/styledLogo'
-import NoUserLinks from './noUserNavLinks';
-import NavLinks from '../nav/navLinks';
+import React from "react";
+import styled from "styled-components";
+import Logo from "../library/styledLogo";
+import NoUserLinks from "./noUserNavLinks";
+import NavLinks from "../nav/navLinks";
 
 class NavBarComponent extends React.Component {
   constructor(props) {
@@ -12,42 +12,35 @@ class NavBarComponent extends React.Component {
   }
 
   logoutUser(e) {
-      e.preventDefault();
-      this.props.logout();
+    e.preventDefault();
+    this.props.logout();
   }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
-      if (this.props.loggedIn) {
-        return (
-          <NavLinks logoutUser={this.logoutUser} />
-        )
-      } else {
-        return (
-          <NoUserLinks />
-        )
-      }
+    if (this.props.loggedIn) {
+      return <NavLinks logoutUser={this.logoutUser} />;
+    } else {
+      return <NoUserLinks />;
+    }
   }
 
   render() {
-
     const NavContainer = styled.ul`
       display: flex;
       flex-direction: row;
       margin: auto;
       list-style: none;
-    `
+    `;
 
-      return (
-        <NavContainer className="nav-container">
-          <li>
-            <Logo>mernhood</Logo>
-          </li>
-          <li>
-            {this.getLinks()}
-          </li>
-        </NavContainer>
-      );
+    return (
+      <NavContainer className="nav-container">
+        <li>
+          <Logo>mernhood</Logo>
+        </li>
+        <li>{this.getLinks()}</li>
+      </NavContainer>
+    );
   }
 }
 

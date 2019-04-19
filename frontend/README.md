@@ -1,3 +1,13 @@
+<!-- Notes from the call -->
+
+- don't mix snake case and camel case
+- find a style guide and stick with it
+- every small change open up as an issue for git practice
+- include linter in repo file
+- Use prettier for autoformatting
+- Use styled-components for styling
+- Whenever component make a storybook file
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
