@@ -20,10 +20,12 @@ const styles = theme => ({
 });
 
 
+
 class SimpleMenu extends React.Component {
-  state = {
-    open: false,
-  };
+  constructor(props){
+    super(props);
+    this.state = {open: false}
+  }
 
   handleToggle = () => {
     this.setState(state => ({ open: !state.open }));
@@ -37,8 +39,7 @@ class SimpleMenu extends React.Component {
     this.setState({ open: false });
   };
 
-  render() {
-    const { open } = this.state;
+  createMenuItem() {
     const StyledMenuItem = styled(MenuItem)`
         justify-content: center !important;
         :hover {
@@ -48,7 +49,19 @@ class SimpleMenu extends React.Component {
          background-color: #e9fff8 !important;
        }
     `
+    let menuItems = []
+    this.props.children.forEach((child, idx) => {
+      menuItems.push(
+        <StyledMenuItem key={idx} onClick={this.handleClose}>{child}</StyledMenuItem>
+      )
+    })
 
+    return menuItems;
+  }
+
+  render() {
+    const { open } = this.state;
+    let items = this.createMenuItem();
     return (
       <div>
         <Button
@@ -59,7 +72,7 @@ class SimpleMenu extends React.Component {
           aria-haspopup="true"
           onClick={this.handleToggle}
         >
-          Toggle Menu Grow
+          {this.props.title}
         </Button>
         <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -72,10 +85,7 @@ class SimpleMenu extends React.Component {
                 <ClickAwayListener onClickAway={this.handleClose}>
                   <MenuList 
                     style={{ minWidth: 200, borderTop: '5px solid #21ce99',}}>
-                    <StyledMenuItem onClick={this.handleClose}>Item1</StyledMenuItem>
-                    <StyledMenuItem onClick={this.handleClose}>Item2</StyledMenuItem>
-                    <StyledMenuItem onClick={this.handleClose}>Item3</StyledMenuItem>
-                    <StyledMenuItem onClick={this.handleClose}>Item4</StyledMenuItem>
+                    {items}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

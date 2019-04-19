@@ -68,7 +68,11 @@ export default function Showcase() {
         <li>
           <h1>DropDown Component</h1>
           <Box>
-            <DropDown />
+            <DropDown title="Toggle Dropdown">
+              <p>Item 1</p>
+              <p>Item 2</p>
+              <p>Item 3</p>
+            </DropDown>
           </Box>
         </li>
         {/* status badges */}

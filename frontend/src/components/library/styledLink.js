@@ -8,7 +8,7 @@ export default function StyledLink({ children, to, className ,color }) {
   const NavItem = styled(Link).attrs({activeclassname})`
     color: black;
     :hover {
-      color: ${COLORS["green"]};
+      color: ${color ? color : COLORS["green"]};
     }
 
   &.${activeclassname} {
