@@ -4,7 +4,8 @@ import Radium from "radium"; // module that allows for inline styles
 import Link from '../library/styledLink'
 import Logo from '../library/styledLogo'
 import { BASE } from '../library/styles'
-import { DropDown } from '../library/dropdown';
+// import { DropDown } from '../library/dropdown';
+import DropDown from '../library/styledDropDown';
 import Button from '../library/button';
 import StyledSearchBar from "../library/styledSearchBar"
 import Box from "../library/box";
@@ -58,12 +59,11 @@ class NavBarComponent extends React.Component {
         return (
           <div>
             <ul style={[styles.navLinksContainer, styles.base.textWeight[weight]]}>
-              <li style={[styles.navLi]}>
-                  <DropDown weight={"bold"} title={"More"} links={[
-                    { url: "/components", text: "Components" },
-                    { url: "/", text: "Home" },
-                    { url: "/signup", text: "Signup" },
-                  ]} />
+              <li style={{marginTop: 12}}>
+                  <DropDown title="More">
+                    <Link to='/'>Home</Link>
+                    <Link to='/components'>Components</Link>
+                  </DropDown>
               </li>
               <li style={{padding: 18, position: 'relative', left: '50vw'}}>
                 <Link to={'/login'}>
