@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^3.9.3",
     "@storybook/addon-storyshots": "^5.0.10",
     "axios": "^0.18.0",
     "i": "^0.3.6",
@@ -14,6 +15,7 @@
     "radium": "^0.25.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-mock-router": "^1.0.15",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8",
@@ -22,6 +24,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "require-context.macro": "^1.0.4",
+    "storybook-react-router": "^1.0.5",
     "styled-components": "^4.2.0"
   },
   "scripts": {
