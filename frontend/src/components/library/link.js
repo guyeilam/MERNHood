@@ -1,15 +1,15 @@
-import React from 'react'
-import Radium from 'radium'; // module that allows for inline styles
+import React from "react";
+import Radium from "radium"; // module that allows for inline styles
 
 import { Link } from "react-router-dom";
-import { BASE, COLORS } from "./styles"
+import { BASE, COLORS } from "./styles";
 
 // --- optional attributes ---- string
-// type   = day | night  
+// type   = day | night
 // color
 // hoverColor
 // title
-// size   = sm | md | lg 
+// size   = sm | md | lg
 // weight = normal | bold
 // http   = "www.some-external-url.com"
 // to     = "/internal-url"
@@ -19,79 +19,95 @@ import { BASE, COLORS } from "./styles"
 class LinkComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
   }
 
-  getStyles(color, hoverColor){
+  getStyles(color, hoverColor) {
     return {
       base: BASE,
       link: {
         color: COLORS[color] || color,
         textAlign: "center",
         ":hover": {
-          color: COLORS[hoverColor] || color,
-        },
-      },
+          color: COLORS[hoverColor] || color
+        }
+      }
     };
   }
 
   internalLink(styles, linkLocation, linkText) {
-    return(
+    return (
       <div>
-        <Link to={linkLocation} style={[styles.base,]}>
+        <Link to={linkLocation} style={[styles.base]}>
           {linkText}
         </Link>
       </div>
-    )
+    );
   }
 
   externalLink(styles, linkLocation, linkText) {
-    return(
+    return (
       <div>
         <a href={linkLocation} style={[styles.base]}>
           {linkText}
         </a>
       </div>
-    )
+    );
   }
 
-  getLinkText(styles, type, size, weight, title, image){
+  getLinkText(styles, type, size, weight, title, image) {
     return (
-      <p style={[
-        styles.base[type],
-        styles.base[weight],
-        styles.link,
-        styles.base.textSize[size],
-      ]}>
+      <p
+        style={[
+          styles.base[type],
+          styles.base[weight],
+          styles.link,
+          styles.base.textSize[size]
+        ]}
+      >
         {image}
         {title}
       </p>
-    )
+    );
   }
 
-
   render() {
-    const { type, color, hoverColor, title, size, weight, http, to, image } = this.props;
+    const {
+      type,
+      color,
+      hoverColor,
+      title,
+      size,
+      weight,
+      http,
+      to,
+      image
+    } = this.props;
     const styles = this.getStyles(color, hoverColor);
     let linkLocation = to;
     let linkText = this.getLinkText(styles, type, size, weight, title, image);
     let linkComp = this.internalLink(styles, linkLocation, linkText);
     // render as external if http provided
-    if (http !== null) { 
-      linkLocation = http; 
+    if (http !== null) {
+      linkLocation = http;
       linkComp = this.externalLink(styles, linkLocation, linkText);
     }
 
-    return (
-      <section className="site-link">
-        {linkComp}
-      </section>
-    )
+    return <section className="site-link">{linkComp}</section>;
   }
 }
 
-LinkComponent.defaultProps = { 
-  type: "day", color: "", hoverColor:"", title: "Some Link", size: "md", weight: "normal", http: null, to:  "#", image: "",};
+LinkComponent.defaultProps = {
+  type: "day",
+  color: "",
+  hoverColor: "",
+  title: "Some Link",
+  size: "md",
+  weight: "normal",
+  http: null,
+  to: "#",
+  image: ""
+};
 
 const LinkTo = Radium(LinkComponent);
 export default LinkTo;

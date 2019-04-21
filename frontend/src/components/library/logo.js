@@ -1,9 +1,9 @@
-import React from 'react'
-import Radium from 'radium'; // module that allows for inline styles
+import React from "react";
+import Radium from "radium"; // module that allows for inline styles
 
-import  Link  from "./link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { BASE } from "./styles"
+import Link from "./link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BASE } from "./styles";
 
 // --- optional attributes ----
 // type = day | night, string
@@ -13,7 +13,7 @@ import { BASE } from "./styles"
 // --- ------------------- ----
 
 class LogoComponent extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {};
   }
@@ -27,7 +27,7 @@ class LogoComponent extends React.Component {
         padding: 5,
         display: "flex",
         flexDirection: "row",
-        justContent: "center",
+        justContent: "center"
       }
     };
   }
@@ -37,21 +37,20 @@ class LogoComponent extends React.Component {
     const { type, title, size, weight } = this.props;
     return (
       <section className="logo-container" style={[styles.logo]}>
-        <Link to="/" 
-        title={title} 
-        image={<FontAwesomeIcon 
-        style={{paddingRight: 5}} 
-        icon="feather-alt" />}
-        size={size} 
-        style={[
-          styles.logo,
-          styles.base[type],
-          styles.base[weight],]} />
+        <Link
+          to="/"
+          title={title}
+          image={
+            <FontAwesomeIcon style={{ paddingRight: 5 }} icon="feather-alt" />
+          }
+          size={size}
+          style={[styles.logo, styles.base[type], styles.base[weight]]}
+        />
       </section>
     );
   }
 }
 
-LogoComponent.defaultProps = { type: "day", size:  "md", weight: '', };
+LogoComponent.defaultProps = { type: "day", size: "md", weight: "" };
 
 export const Logo = Radium(LogoComponent);

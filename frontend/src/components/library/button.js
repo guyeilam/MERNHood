@@ -1,7 +1,7 @@
-import React from 'react'
-import Radium from 'radium'; // module that allows for inline styles
+import React from "react";
+import Radium from "radium"; // module that allows for inline styles
 
-import { BASE, COLORS } from "./styles"
+import { BASE, COLORS } from "./styles";
 
 // --- optional attributes ----
 // type = day | night, string
@@ -16,7 +16,7 @@ import { BASE, COLORS } from "./styles"
 // --- ------------------- ----
 
 class ButtonComponent extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {};
     this.handleClick = this.handleClick.bind(this);
@@ -33,7 +33,7 @@ class ButtonComponent extends React.Component {
         paddingRight: 20,
         transition: "box-shadow 300ms",
         ":hover": {
-          boxShadow: "0px 4px 8px rgba(0,0,0,0.16)",
+          boxShadow: "0px 4px 8px rgba(0,0,0,0.16)"
         }
       },
       disabled: {
@@ -46,31 +46,30 @@ class ButtonComponent extends React.Component {
       },
       shape: {
         round: {
-          borderRadius: 100,
+          borderRadius: 100
         },
         square: {
-          borderRadius: 8,
-        },
+          borderRadius: 8
+        }
       },
       size: {
         sm: {
           paddingLeft: 10,
           paddingRight: 10,
-          height: 28,
+          height: 28
         },
         md: {},
         lg: {
           paddingLeft: 40,
           paddingRight: 40,
-          height: 68,
+          height: 68
         }
       }
     };
   }
 
-
-  handleClick(e, submit, disabled){
-    if(submit){
+  handleClick(e, submit, disabled) {
+    if (submit) {
       e.preventDefault();
       return submit;
     } else if (disabled) {
@@ -84,28 +83,36 @@ class ButtonComponent extends React.Component {
     const styles = this.getStyles(color);
     return (
       <section className="site-button">
-        <button 
-        disabled={disabled}
-        onClick={e => this.handleClick(e, submit, disabled)}
-        style={[
-          styles.base,
-          styles.base.textSize[size],
-          styles.base.textWeight[weight],
-          styles.button,
-          styles.disabled[disabled],
-          styles.shape[shape],
-          styles.size[size]]}>
+        <button
+          disabled={disabled}
+          onClick={e => this.handleClick(e, submit, disabled)}
+          style={[
+            styles.base,
+            styles.base.textSize[size],
+            styles.base.textWeight[weight],
+            styles.button,
+            styles.disabled[disabled],
+            styles.shape[shape],
+            styles.size[size]
+          ]}
+        >
           {title}
         </button>
       </section>
-    )
+    );
   }
 }
 
-ButtonComponent.defaultProps = { 
-  type: "day", shape: "round", color: "green", 
-  title: "click me", size: "md", weight: "normal",
-  submit: null, disabled: false };
+ButtonComponent.defaultProps = {
+  type: "day",
+  shape: "round",
+  color: "green",
+  title: "click me",
+  size: "md",
+  weight: "normal",
+  submit: null,
+  disabled: false
+};
 
 const Button = Radium(ButtonComponent);
 
