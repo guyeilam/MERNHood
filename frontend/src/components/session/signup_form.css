@@ -95,3 +95,38 @@
 .inactive-text {
   color: #b1bfc4;
 }
+
+.confirm-header {
+  font-size: 56px;
+  display: flex;
+}
+
+.confirm-header-green {
+  color: #21ce99;
+}
+
+.confirm-first-name, .confirm-last-name, .confirm-email {
+  display: flex;
+  padding: 10px;
+}
+
+.confirm-details {
+  font-size: 24px;
+  margin: 20px 0px 20px 0px;
+}
+
+.signup-form-submit {
+  border-radius: 8px;
+  font-size: 18px;
+  height: 46px;
+  background: #21ce99;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.signup-form-submit:hover {
+  background: #1aa278;
+  border-color: #199972;
+}
+
