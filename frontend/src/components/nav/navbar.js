@@ -4,7 +4,7 @@ import Logo from "../library/styledLogo";
 import NoUserLinks from "./noUserNavLinks";
 import NavLinks from "../nav/navLinks";
 
-class NavBarComponent extends React.Component {
+class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
@@ -44,4 +44,4 @@ class NavBarComponent extends React.Component {
   }
 }
 
-export const NavBar = NavBarComponent;
+export default NavBar;
