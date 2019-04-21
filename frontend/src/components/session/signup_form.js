@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import AccountInfoForm from './account_info';
+import SignupFormHeader from './signup_form_header.jsx';
 
 import './signup_form.css';
 
@@ -121,7 +122,11 @@ class SignupForm extends React.Component {
               </div>
             </div>
 
-            <input type="submit" className="signup-form-submit" value="Submit" />
+            <input
+              type="submit"
+              className="signup-form-submit"
+              value="Submit"
+            />
           </form>
         );
         break;
@@ -130,73 +135,7 @@ class SignupForm extends React.Component {
     }
     return (
       <div className="signup-container">
-        <div className="signup-form-header">
-          <div className="signup-form-header-logo">
-            <img
-              src="https://d2ue93q3u507c2.cloudfront.net/assets/robinhood/images/logo.png"
-              alt="Logo"
-            />
-          </div>
-
-          <div className="signup-form-progress">
-            <div className="signup-progress-text-container">
-              <div
-                className={
-                  this.state.step === 1
-                    ? `signup-progress-text`
-                    : `signup-progress-text inactive-text`
-                }>
-                Account
-              </div>
-              <div className="signup-progress-text inactive-text">
-                Basic Info
-              </div>
-              <div className="signup-progress-text inactive-text">Identity</div>
-              <div className="signup-progress-text inactive-text">Funding</div>
-              <div
-                className={
-                  this.state.step === 2
-                    ? `signup-progress-text`
-                    : `signup-progress-text inactive-text`
-                }>
-                Submit
-              </div>
-            </div>
-
-            <div className="signup-progress-bar">
-              <div className="signup-progress-bar-segment active" />
-              <div
-                className={
-                  this.state.step > 1
-                    ? `signup-progress-bar-segment active`
-                    : `signup-progress-bar-segment`
-                }
-              />
-              <div
-                className={
-                  this.state.step > 1
-                    ? `signup-progress-bar-segment active`
-                    : `signup-progress-bar-segment`
-                }
-              />
-              <div
-                className={
-                  this.state.step > 1
-                    ? `signup-progress-bar-segment active`
-                    : `signup-progress-bar-segment`
-                }
-              />
-              <div
-                className={
-                  this.state.step > 1
-                    ? `signup-progress-bar-segment active`
-                    : `signup-progress-bar-segment`
-                }
-              />
-              <div className="signup-progress-bar-segment" />
-            </div>
-          </div>
-        </div>
+        <SignupFormHeader step={this.state.step} />
         {this.renderErrors()}
         <div className="signup-form-container">
           {formComponent}
