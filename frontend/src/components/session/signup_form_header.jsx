@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const SignupFormHeader = ({step}) => (
+const SignupFormHeader = ({ step }) => (
   <div className="signup-form-header">
     <div className="signup-form-header-logo">
       <img
@@ -16,7 +16,8 @@ const SignupFormHeader = ({step}) => (
             step === 1
               ? `signup-progress-text`
               : `signup-progress-text inactive-text`
-          }>
+          }
+        >
           Account
         </div>
         <div className="signup-progress-text inactive-text">Basic Info</div>
@@ -27,7 +28,8 @@ const SignupFormHeader = ({step}) => (
             step === 2
               ? `signup-progress-text`
               : `signup-progress-text inactive-text`
-          }>
+          }
+        >
           Submit
         </div>
       </div>
