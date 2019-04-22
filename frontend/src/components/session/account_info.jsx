@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import {connect} from 'react-redux';
+import React, { useState } from "react";
+import { connect } from "react-redux";
 
-function AccountInfoForm({fieldValues, saveValues}) {
+function AccountInfoForm({ fieldValues, saveValues }) {
   const [firstName, setFirstName] = useState(fieldValues.firstName);
   const [lastName, setLastName] = useState(fieldValues.lastName);
   const [email, setEmail] = useState(fieldValues.email);
@@ -10,11 +10,12 @@ function AccountInfoForm({fieldValues, saveValues}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const fieldValues = Object.assign({}, {firstName, lastName, email, password, password2});
+    const fieldValues = Object.assign(
+      {},
+      { firstName, lastName, email, password, password2 }
+    );
     saveValues(fieldValues);
   }
-
-  function renderErrors() {}
 
   return (
     <div className="signup-form-main">
@@ -23,7 +24,7 @@ function AccountInfoForm({fieldValues, saveValues}) {
         Robinhood lets you invest in companies you love, commission-free.
       </div>
       <div className="signup-form">
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={e => handleSubmit(e)}>
           <div className="signup-form">
             <div className="signup-form-inputs">
               <div className="signup-form-inputs-row">
@@ -31,14 +32,14 @@ function AccountInfoForm({fieldValues, saveValues}) {
                   type="text"
                   className="signup-form-input"
                   value={firstName}
-                  onChange={(e) => setFirstName(e.currentTarget.value)}
+                  onChange={e => setFirstName(e.currentTarget.value)}
                   placeholder="First name"
                 />
                 <input
                   type="text"
                   className="signup-form-input"
                   value={lastName}
-                  onChange={(e) => setLastName(e.currentTarget.value)}
+                  onChange={e => setLastName(e.currentTarget.value)}
                   placeholder="Last name"
                 />
               </div>
@@ -47,7 +48,7 @@ function AccountInfoForm({fieldValues, saveValues}) {
                   type="text"
                   className="signup-form-input"
                   value={email}
-                  onChange={(e) => setEmail(e.currentTarget.value)}
+                  onChange={e => setEmail(e.currentTarget.value)}
                   placeholder="Email"
                 />
               </div>
@@ -56,7 +57,7 @@ function AccountInfoForm({fieldValues, saveValues}) {
                   type="password"
                   className="signup-form-input"
                   value={password}
-                  onChange={(e) => setPassword(e.currentTarget.value)}
+                  onChange={e => setPassword(e.currentTarget.value)}
                   placeholder="Password"
                 />
               </div>
@@ -65,14 +66,17 @@ function AccountInfoForm({fieldValues, saveValues}) {
                   type="password"
                   className="signup-form-input"
                   value={password2}
-                  onChange={(e) => setPassword2(e.currentTarget.value)}
+                  onChange={e => setPassword2(e.currentTarget.value)}
                   placeholder="Confirm Password"
                 />
               </div>
               <div className="signup-form-inputs-row">
-                <input type="submit" className="signup-form-submit" value="Continue" />
+                <input
+                  type="submit"
+                  className="signup-form-submit"
+                  value="Continue"
+                />
               </div>
-              {renderErrors()}
             </div>
           </div>
         </form>
@@ -81,18 +85,4 @@ function AccountInfoForm({fieldValues, saveValues}) {
   );
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    fieldValues: ownProps.fieldValues,
-    saveValues: ownProps.saveValues,
-  };
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {};
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AccountInfoForm);
+export default AccountInfoForm;

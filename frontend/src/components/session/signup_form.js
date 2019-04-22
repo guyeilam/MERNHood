@@ -1,21 +1,22 @@
-import React from 'react';
-import {withRouter} from 'react-router-dom';
-import AccountInfoForm from './account_info';
-import SignupFormHeader from './signup_form_header.jsx';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import AccountInfoForm from "./account_info";
+import SignupFormHeader from "./signup_form_header";
+import ConfirmInfoForm from "./confirm_info";
 
-import './signup_form.css';
+import "./signup_form.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      password2: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      password2: "",
       step: 1,
-      errors: {},
+      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
@@ -24,16 +25,9 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+      this.props.history.push("/login");
     }
-    this.setState({errors: nextProps.errors});
-  }
-
-  update(field) {
-    return e =>
-      this.setState({
-        [field]: e.currentTarget.value,
-      });
+    this.setState({ errors: nextProps.errors });
   }
 
   handleSubmit(e) {
@@ -43,7 +37,7 @@ class SignupForm extends React.Component {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2,
+      password2: this.state.password2
     };
     this.props.signup(user, this.props.history);
   }
@@ -56,7 +50,7 @@ class SignupForm extends React.Component {
       email: newState.email,
       password: newState.password,
       password2: newState.password2,
-      step: this.state.step + 1,
+      step: this.state.step + 1
     });
   }
 
@@ -71,63 +65,22 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    let fieldValues = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      password2: '',
-    };
     let formComponent;
     switch (this.state.step) {
       case 1:
         formComponent = (
           <AccountInfoForm
-            fieldValues={fieldValues}
+            fieldValues={this.state}
             saveValues={this.saveValues}
           />
         );
         break;
       case 2:
         formComponent = (
-          <form onSubmit={e => this.handleSubmit(e)}>
-            <div className="confirm-header">
-              Welcome,
-              <div className="confirm-header-green">
-                &nbsp;{this.state.firstName}
-              </div>
-            </div>
-            <div className="confirm-header">
-              Please confirm your information
-            </div>
-
-            <div className="confirm-details">
-              <div className="confirm-first-name">
-                First name:{' '}
-                <div className="confirm-header-green">
-                  &nbsp;{this.state.firstName}
-                </div>
-              </div>
-              <div className="confirm-last-name">
-                Last name:{' '}
-                <div className="confirm-header-green">
-                  &nbsp;{this.state.lastName}
-                </div>
-              </div>
-              <div className="confirm-email">
-                Email:{' '}
-                <div className="confirm-header-green">
-                  &nbsp;{this.state.email}
-                </div>
-              </div>
-            </div>
-
-            <input
-              type="submit"
-              className="signup-form-submit"
-              value="Submit"
-            />
-          </form>
+          <ConfirmInfoForm
+            fieldValues={this.state}
+            handleSubmit={this.handleSubmit}
+          />
         );
         break;
       default:
