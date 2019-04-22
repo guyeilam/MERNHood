@@ -4,17 +4,18 @@ import StoryRouter from "storybook-react-router";
 // import { action } from '@storybook/addon-actions';
 
 import DropDown from "./styledDropDown";
+import Box from "./box";
 
 const stories = storiesOf("DropDown", module);
 // allow react-router-dom Link access to StoryRouter
 stories.addDecorator(StoryRouter());
 
 stories.add("default", () => (
-  <div style={{ marginTop: "50vh", marginLeft: "50vw" }}>
+  <Box>
     <DropDown title="Toggle">
       <p>Item 1</p>
       <p>Item 2</p>
       <p>Item 3</p>
     </DropDown>
-  </div>
+  </Box>
 ));
