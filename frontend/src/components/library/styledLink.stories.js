@@ -9,12 +9,12 @@ const stories = storiesOf("Link", module);
 stories.addDecorator(StoryRouter());
 
 stories.add("default", () => (
-  <div style={{ margin: "45vw" }}>
+  <div style={{ marginTop: "50vh", marginLeft: "50vw" }}>
     <Link to="/">home</Link>
   </div>
 ));
 stories.add("colored", () => (
-  <div style={{ margin: "45vw" }}>
+  <div style={{ marginTop: "50vh", marginLeft: "50vw" }}>
     <Link color="lightBlue" to="/">
       home
     </Link>

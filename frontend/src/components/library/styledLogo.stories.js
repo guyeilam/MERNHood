@@ -10,7 +10,9 @@ const stories = storiesOf("Logo", module);
 stories.addDecorator(StoryRouter());
 
 stories.add("default", () => (
-  <Logo>
-    <p>mernhood</p>
-  </Logo>
+  <div style={{ marginTop: "50vh" }}>
+    <Logo>
+      <p>mernhood</p>
+    </Logo>
+  </div>
 ));

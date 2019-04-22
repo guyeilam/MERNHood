@@ -10,7 +10,7 @@ const stories = storiesOf("DropDown", module);
 stories.addDecorator(StoryRouter());
 
 stories.add("default", () => (
-  <div style={{ margin: "45vw" }}>
+  <div style={{ marginTop: "50vh", marginLeft: "50vw" }}>
     <DropDown title="Toggle">
       <p>Item 1</p>
       <p>Item 2</p>
