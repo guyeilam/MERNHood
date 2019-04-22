@@ -59,14 +59,14 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-container">
         <div className="signup-form-header">
-          <div className="signup-form-header-logo">
+          {/* <div className="signup-form-header-logo">
             <img
               src="https://d2ue93q3u507c2.cloudfront.net/assets/robinhood/images/logo.png"
               alt="Logo"
             />
-          </div>
+          </div> */}
 
-          <div className="signup-form-progress">
+          {/* <div className="signup-form-progress">
             <div className="signup-progress-text-container">
               <div className="signup-progress-text">Account</div>
               <div className="signup-progress-text">Basic Info</div>
@@ -78,7 +78,7 @@ class SignupForm extends React.Component {
             <div className="signup-progress-bar">
               <div className="signup-progress-bar-segment" />
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="signup-form-container">

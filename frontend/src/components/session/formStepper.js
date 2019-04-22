@@ -6,6 +6,7 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import SignUpForm from "./signup_form_container";
 
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -48,7 +49,7 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return "Account...";
+      return <SignUpForm />;
     case 1:
       return "Your basic info...";
     case 2:
@@ -152,9 +153,9 @@ class HorizontalLinearStepper extends React.Component {
               </div>
             ) : (
               <div>
-                <Typography className={classes.instructions}>
-                  {getStepContent(activeStep)}
-                </Typography>
+                {/* <Typography className={classes.instructions}> */}
+                {getStepContent(activeStep)}
+                {/* </Typography> */}
                 <div>
                   <Button
                     disabled={activeStep === 0}

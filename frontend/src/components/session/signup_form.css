@@ -1,7 +1,7 @@
 .signup-container {
-  width: 85%;
+  /* width: 85%; */
   margin: auto;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .signup-form-header {
@@ -53,11 +53,14 @@
 
 .signup-form-subheader {
   font-size: 26px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .signup-form-inputs {
   padding: 10px;
+}
+.signup-form-input:focus {
+  border: 2px solid rgb(33, 206, 153);
 }
 
 .signup-form-inputs-row {
@@ -73,6 +76,6 @@
   line-height: 1.33;
   border-radius: 4px;
   color: #040d14;
-  border: 1px solid #b1bfc4;
+  border: 2px solid #b1bfc4;
   width: 100%;
 }

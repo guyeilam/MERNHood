@@ -8,7 +8,8 @@ import "./main.css";
 
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
+// import SignupFormContainer from "./session/signup_form_container";
+import SignUp from "./session/signUp";
 import ComponentLibrary from "./library/showcase";
 import { library } from "@fortawesome/fontawesome-svg-core";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,7 +24,8 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <ProtectedRoute exact path="/components" component={ComponentLibrary} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+      <AuthRoute exact path="/signup" component={SignUp} />
     </Switch>
   </div>
 );
