@@ -1,5 +1,6 @@
 /config/keys.js
 /node_modules
+/frontend/node_modules.DS_Store
 /frontend/node_modules
 *.swp
 .DS_Store

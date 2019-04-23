@@ -1,5 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import AccountInfoForm from "./account_info";
+import SignupFormHeader from "./signup_form_header";
+import ConfirmInfoForm from "./confirm_info";
 
 import "./signup_form.css";
 
@@ -12,37 +15,43 @@ class SignupForm extends React.Component {
       email: "",
       password: "",
       password2: "",
+      step: 1,
       errors: {}
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.saveValues = this.saveValues.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push("/login");
     }
-
     this.setState({ errors: nextProps.errors });
-  }
-
-  update(field) {
-    return e =>
-      this.setState({
-        [field]: e.currentTarget.value
-      });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let user = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-
     this.props.signup(user, this.props.history);
+  }
+  
+  saveValues(fields) {
+    let newState = Object.assign({}, this.state, fields);
+    this.setState({
+      firstName: newState.firstName,
+      lastName: newState.lastName,
+      email: newState.email,
+      password: newState.password,
+      password2: newState.password2,
+      step: this.state.step + 1
+    });
   }
 
   renderErrors() {
@@ -56,93 +65,33 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    let formComponent;
+    switch (this.state.step) {
+      case 1:
+        formComponent = (
+          <AccountInfoForm
+            fieldValues={this.state}
+            saveValues={this.saveValues}
+          />
+        );
+        break;
+      case 2:
+        formComponent = (
+          <ConfirmInfoForm
+            fieldValues={this.state}
+            handleSubmit={this.handleSubmit}
+          />
+        );
+        break;
+      default:
+        break;
+    }
     return (
       <div className="signup-container">
-        <div className="signup-form-header">
-          <div className="signup-form-header-logo">
-            <img
-              src="https://d2ue93q3u507c2.cloudfront.net/assets/robinhood/images/logo.png"
-              alt="Logo"
-            />
-          </div>
-
-          <div className="signup-form-progress">
-            <div className="signup-progress-text-container">
-              <div className="signup-progress-text">Account</div>
-              <div className="signup-progress-text">Basic Info</div>
-              <div className="signup-progress-text">Identity</div>
-              <div className="signup-progress-text">Funding</div>
-              <div className="signup-progress-text">Submit</div>
-            </div>
-
-            <div className="signup-progress-bar">
-              <div className="signup-progress-bar-segment" />
-            </div>
-          </div>
-        </div>
-
+        <SignupFormHeader step={this.state.step} />
+        {this.renderErrors()}
         <div className="signup-form-container">
-          <div className="signup-form-main">
-            <div className="signup-form-header-text">Make Your Money Move</div>
-            <div className="signup-form-subheader">
-              Robinhood lets you invest in companies you love, commission-free.
-            </div>
-            <div className="signup-form">
-              <form onSubmit={this.handleSubmit}>
-                <div className="signup-form">
-                  <div className="signup-form-inputs">
-                    <div className="signup-form-inputs-row">
-                      <input
-                        type="text"
-                        className="signup-form-input"
-                        value={this.state.firstName}
-                        onChange={this.update("firstName")}
-                        placeholder="First name"
-                      />
-                      <input
-                        type="text"
-                        className="signup-form-input"
-                        value={this.state.lastName}
-                        onChange={this.update("lastName")}
-                        placeholder="Last name"
-                      />
-                    </div>
-                    <div className="signup-form-inputs-row">
-                      <input
-                        type="text"
-                        className="signup-form-input"
-                        value={this.state.email}
-                        onChange={this.update("email")}
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div className="signup-form-inputs-row">
-                      <input
-                        type="password"
-                        className="signup-form-input"
-                        value={this.state.password}
-                        onChange={this.update("password")}
-                        placeholder="Password"
-                      />
-                    </div>
-                    <div className="signup-form-inputs-row">
-                      <input
-                        type="password"
-                        className="signup-form-input"
-                        value={this.state.password2}
-                        onChange={this.update("password2")}
-                        placeholder="Confirm Password"
-                      />
-                    </div>
-                    <div className="signup-form-inputs-row">
-                      <input type="submit" value="Submit" />
-                    </div>
-                    {this.renderErrors()}
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+          {formComponent}
 
           <div className="signup-form-sidebar" />
         </div>
