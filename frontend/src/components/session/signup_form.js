@@ -41,7 +41,7 @@ class SignupForm extends React.Component {
     };
     this.props.signup(user, this.props.history);
   }
-
+  
   saveValues(fields) {
     let newState = Object.assign({}, this.state, fields);
     this.setState({
