@@ -4,14 +4,30 @@
 
 [Robinhood](www.robinhood.com) inspired & MERN-stack powered mock-trading platform.
 
-#### _MERN STACK_
+### Getting started
+
+- `npm install` at the root directory
+- `npm install` inside the `./frontend` directory
+- `npm run dev` at the root directory
+  > To see storybook, `npm run storybook` at the `./frontnend` directory
+
+#### Tech Stack 🍔
 
 - [MongoDB](https://www.mongodb.com/) : Document database – used by your back-end application to store its data as JSON (JavaScript Object Notation) documents
 - [Express](https://expressjs.com/): Back-end web application framework running on top of Node.js
 - [React](https://reactjs.org/): a JavaScript library developed by Facebook to build interactive/reactive user interfaces.
 - [Node.js](https://nodejs.org/en/) : JavaScript runtime environment – lets you implement your application back-end in JavaScript
 
-#### File Structure
+#### Notable Packages 📦
+
+- [Material-UI](https://material-ui.com/) - react components that implement Google's Material Design.
+- [Babel](https://babeljs.io/) - a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards, compatible, can convert JSX syntax
+- [Webpack](https://webpack.js.org/) - a static module bundler for modern JavaScript applications
+- [Storybook](https://storybook.js.org/) - open source tool for developing UI components in isolation
+- [Styled-Components](https://www.styled-components.com/) - allows you to write actual CSS code to style your components
+- [Passport.js](http://www.passportjs.org/) - authentication middleware for Node.js
+
+#### File Structure 📂
 
 ```bash
 ├── README.md
