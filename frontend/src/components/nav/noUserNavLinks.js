@@ -21,7 +21,8 @@ export default function userNavLinks() {
         <ListItem style={{ marginTop: 12 }}>
           <DropDown title="More">
             <Link to="/">Home</Link>
-            <Link to="/components">Components</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign Up</Link>
           </DropDown>
         </ListItem>
         <ListItem style={{ padding: 18, position: "relative", left: "50vw" }}>
