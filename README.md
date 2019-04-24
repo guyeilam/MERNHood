@@ -1,6 +1,6 @@
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# MernHood
+# MERNHood
 
 [Robinhood](www.robinhood.com) inspired & MERN-stack powered mock-trading platform.
 
