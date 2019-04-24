@@ -7,6 +7,9 @@ export default function StyledLink({ children, to, className, color }) {
   const activeclassname = "nav-item-active";
   const NavItem = styled(Link).attrs({ activeclassname })`
     color: black;
+    text-align: center;
+    width: fill-available;
+
     :hover {
       color: ${color ? color : COLORS["green"]};
     }
