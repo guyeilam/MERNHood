@@ -5,6 +5,7 @@ import styled from "styled-components";
 export default function HomePage() {
   const Grid = styled.div`
     display: grid;
+    margin-top: 50px;
     grid-template-columns: 60vw 40vw;
     grid-template-rows: 100px 100px 100px;
     grid-column-gap: 30px;
