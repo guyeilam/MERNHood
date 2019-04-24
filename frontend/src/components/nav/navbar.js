@@ -12,7 +12,7 @@ class NavBar extends React.Component {
   }
 
   logoutUser(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.props.logout();
   }
 
@@ -31,6 +31,7 @@ class NavBar extends React.Component {
       flex-direction: row;
       margin: auto;
       list-style: none;
+      padding: 10px;
     `;
 
     return (

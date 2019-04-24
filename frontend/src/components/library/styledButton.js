@@ -38,7 +38,7 @@ export default function Button({
   const handleClick = (e, submit, disabled) => {
     if (submit) {
       e.preventDefault();
-      return submit;
+      return submit();
     } else if (disabled) {
       e.preventDefault();
       return;
