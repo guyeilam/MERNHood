@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../library/button";
+import Button from "../library/styledButton";
 import { Link } from "react-router-dom";
 class MainPage extends React.Component {
   render() {
@@ -44,7 +44,7 @@ class MainPage extends React.Component {
               desktop.
             </p>
             <Link to="/signup">
-              <Button title="Sign Up" />
+              <Button>Sign Up</Button>
             </Link>
           </div>
           <img
