@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "../library/styledButton";
 import Link from "../library/styledLink";
+import ExternalLink from "../library/styledExternalLink";
 import DropDown from "../library/styledDropDown";
 import styled from "styled-components";
+import StyledExternalLink from "../library/styledExternalLink";
 
 const NavLinksContainer = styled.ul`
   display: flex;
@@ -20,7 +22,9 @@ export default function userNavLinks() {
       <NavLinksContainer>
         <ListItem style={{ marginTop: 12 }}>
           <DropDown title="More">
-            <Link to="/">Home</Link>
+            <StyledExternalLink href="https://github.com/guyeilam/MERNHood">
+              About
+            </StyledExternalLink>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
           </DropDown>
