@@ -2,7 +2,7 @@ import React from "react";
 import Box from "../library/box";
 import Button from "../library/styledButton";
 import Link from "../library/styledLink";
-import StyledSearchBar from "../library/styledSearchBar";
+import SearchBar from "../nav/search/react_select_search";
 
 export default function NavLinks(props) {
   return (
@@ -10,7 +10,7 @@ export default function NavLinks(props) {
       <Box padding="10px">
         <ul className="logged-in-nav-container" style={{ display: "flex" }}>
           <li style={{ marginLeft: 10, minWidth: 350 }}>
-            <StyledSearchBar />
+            <SearchBar />
           </li>
           <li style={{ padding: 10, paddingLeft: 140 }}>
             <Link to={"/"}>
