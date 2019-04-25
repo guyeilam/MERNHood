@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Select from "react-select";
-import { groupedOptions } from "./data/data";
+import { groupedOptions, companies } from "./data/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
@@ -80,7 +80,7 @@ const Search = styled(Select)`
 export default () => (
   <Search
     placeholder="Search"
-    options={groupedOptions}
+    options={companies}
     formatGroupLabel={formatGroupLabel}
     components={{ DropdownIndicator, IndicatorSeparator }}
     styles={{ control: controlStyles, option: optionStyles }}

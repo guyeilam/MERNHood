@@ -1,3 +1,26 @@
+export const companies = [
+  { value: "elysiumhealth", label: "Elysium Health" },
+  { value: "accessintelligence", label: "Access Intelligence" },
+  { value: "etrade", label: "E*TRADE" },
+  { value: "nep", label: "NEP" },
+  { value: "spencerstuart", label: "Spencer Stuart" },
+  { value: "logix", label: "Logix" },
+  { value: "stantec", label: "Stantec" },
+  { value: "paloaltonetworks", label: "Palo Alto Networks" },
+  { value: "rxbar", label: "RXBAR" },
+  { value: "ownerscom", label: "owners.com" },
+  { value: "caesarsentertainment", label: "Caesars Entertainment" },
+  { value: "teague", label: "TEAGUE" },
+  { value: "entertainmentone", label: "Entertainment One" },
+  { value: "opensystemshealthcare", label: "Open Systems Healthcare" },
+  { value: "lendkey", label: "LendKey" },
+  { value: "sick", label: "SICK" },
+  { value: "tacobell", label: "Taco Bell" },
+  { value: "inlineplastics", label: "Inline Plastics" },
+  { value: "zoovu", label: "Zoovu" },
+  { value: "gapinc", label: "Gap Inc." }
+];
+
 export const colourOptions = [
   { value: "ocean", label: "Ocean", color: "#00B8D9", isFixed: true },
   { value: "blue", label: "Blue", color: "#0052CC", disabled: true },
