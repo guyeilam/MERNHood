@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "../library/box";
 import Loader from "../library/loaders/div_loader";
+import Button from "../library/styledButton";
 import styled from "styled-components";
 
 export default function HomePage() {
+  // react-hook state
+  const [loading, setLoading] = useState(true);
+
   const Grid = styled.div`
     display: grid;
     margin-top: 50px;
@@ -24,24 +28,35 @@ export default function HomePage() {
     }
   };
 
+  let LoadingContent;
+  if (loading) {
+    LoadingContent = Loader;
+  } else {
+    LoadingContent = () => {
+      return null;
+    };
+  }
+
   return (
     <Grid>
       <section style={styles.column1} className="chart-container">
         <p>chart</p>
-        <Loader />
+        <LoadingContent />
       </section>
       <section style={styles.column2} className="watching-container">
         <p>watching</p>
-        <Loader />
+        <LoadingContent />
       </section>
       <section style={styles.column1} className="top-movers-container">
         <p>top movers</p>
-        <Loader />
+        <LoadingContent />
       </section>
       <section style={styles.column1} className="news-container">
         <p>news</p>
-        <Loader />
+        <LoadingContent />
       </section>
+      {/* Placeholder button, turns loading animation on / off */}
+      <Button submit={() => setLoading(!loading)}>Toggle Loading</Button>
     </Grid>
   );
 }
