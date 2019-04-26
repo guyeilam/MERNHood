@@ -70,7 +70,7 @@
 }
 
 .login-form-input:focus {
-  border: 1px solid #21ce99;
+  border: 1px solid #21ce99 !important;
   background-color: #fff;
 }
 
