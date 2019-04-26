@@ -82,6 +82,10 @@
   width: 100%;
 }
 
+.signup-form-input:focus {
+  border: 1px solid #21ce99;
+}
+
 .signup-progress-bar-segment {
   height: 3px;
   width: 20%;
