@@ -30,19 +30,20 @@ class SimpleMenu extends React.Component {
   };
 
   handleClose = event => {
-    if (this.anchorEl.contains(event.target)) {
-      return;
+    if (event.target.firstElementChild) {
+      event.target.firstElementChild.click();
     }
-
     this.setState({ open: false });
   };
 
   createMenuItem() {
     const StyledMenuItem = styled(MenuItem)`
       justify-content: center !important;
+
       :hover {
         background-color: #e9fff8 !important;
       }
+
       :focus {
         background-color: #e9fff8 !important;
       }
