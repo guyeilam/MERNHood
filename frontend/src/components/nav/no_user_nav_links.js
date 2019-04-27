@@ -3,7 +3,7 @@ import Button from "../library/styled_button";
 import Link from "../library/styled_link";
 import DropDown from "../library/styled_dropdown";
 import styled from "styled-components";
-import StyledExternalLink from "../library/styledExternalLink";
+import StyledExternalLink from "../library/styled_external_link";
 
 const NavLinksContainer = styled.ul`
   display: flex;
