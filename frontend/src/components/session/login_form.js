@@ -90,7 +90,6 @@ class LoginForm extends React.Component {
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
-              onClick={() => console.log("clicked")}
               required
             />
             </div>
