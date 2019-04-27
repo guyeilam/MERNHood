@@ -7,7 +7,7 @@ import "./reset.css";
 import "./main.css";
 
 import MainPage from "./main/main_page";
-import HomePage from "./home/homePage";
+import HomePage from "./home/home_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 

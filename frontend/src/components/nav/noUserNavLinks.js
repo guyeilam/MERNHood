@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../library/styledButton";
+import Button from "../library/styled_button";
 import Link from "../library/styledLink";
 import DropDown from "../library/styledDropDown";
 import styled from "styled-components";

@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import StoryRouter from "storybook-react-router";
 
-import Button from "./styledButton";
+import Button from "./styled_button";
 import Box from "./box";
 
 const stories = storiesOf("Button", module);

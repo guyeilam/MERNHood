@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "../library/box";
-import Button from "../library/styledButton";
+import Button from "../library/styled_button";
 import Link from "../library/styledLink";
 import SearchBar from "../nav/search/react_select_search";
 
