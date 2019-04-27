@@ -3,6 +3,7 @@ import Button from "../library/styled_button";
 import Link from "../library/styled_link";
 import DropDown from "../library/styled_dropdown";
 import styled from "styled-components";
+import StyledExternalLink from "../library/styledExternalLink";
 
 const NavLinksContainer = styled.ul`
   display: flex;
@@ -20,8 +21,11 @@ export default function userNavLinks() {
       <NavLinksContainer>
         <ListItem style={{ marginTop: 12 }}>
           <DropDown title="More">
-            <Link to="/">Home</Link>
-            <Link to="/components">Components</Link>
+            <StyledExternalLink href="https://github.com/guyeilam/MERNHood">
+              About
+            </StyledExternalLink>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign Up</Link>
           </DropDown>
         </ListItem>
         <ListItem style={{ padding: 18, position: "relative", left: "50vw" }}>

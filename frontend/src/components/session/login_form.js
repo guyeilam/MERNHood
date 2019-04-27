@@ -87,12 +87,16 @@ class LoginForm extends React.Component {
                   required
                 />
               </div>
-              <div className="login-form-inputs-row">
-                <input
-                  className="signin-form-submit"
-                  type="submit"
-                  value="Sign In"
-                />
+            <input
+              className="login-form-input"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              required
+            />
+            </div>
+            <div className="login-form-inputs-row">
+              <input className="signin-form-submit" type="submit" value="Sign In" />
               </div>
               {this.renderErrors()}
             </div>
