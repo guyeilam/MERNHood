@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "./styledLink";
+import Link from "./styled_link";
 import Box from "./box";
 
 export default function Logo({ children }) {

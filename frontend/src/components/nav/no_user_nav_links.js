@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../library/styled_button";
-import Link from "../library/styledLink";
-import DropDown from "../library/styledDropDown";
+import Link from "../library/styled_link";
+import DropDown from "../library/styled_dropdown";
 import styled from "styled-components";
 
 const NavLinksContainer = styled.ul`

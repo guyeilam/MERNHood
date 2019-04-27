@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "../library/box";
 import Button from "../library/styled_button";
-import Link from "../library/styledLink";
+import Link from "../library/styled_link";
 import SearchBar from "../nav/search/react_select_search";
 
 export default function NavLinks(props) {

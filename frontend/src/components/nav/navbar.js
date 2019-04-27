@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../library/styledLogo";
+import Logo from "../library/styled_logo";
 import NoUserLinks from "./no_user_nav_links";
 import NavLinks from "../nav/nav_links";
 
