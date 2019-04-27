@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../library/button";
 import { Link } from "react-router-dom";
+import NavBar from "../nav/navbar_container";
+
 class MainPage extends React.Component {
   render() {
     const styles = {
@@ -32,7 +34,8 @@ class MainPage extends React.Component {
     };
 
     return (
-      <>
+      <div style={{ maxWidth: "80vw", margin: "auto" }}>
+        <NavBar />
         <div style={styles.container} className="home-page-container">
           <div style={styles.textContainer} className="hp-welcome-text">
             <p style={styles.heading}>
@@ -53,7 +56,7 @@ class MainPage extends React.Component {
             src="https://bit.ly/2CYwOUg"
           />
         </div>
-      </>
+      </div>
     );
   }
 }
