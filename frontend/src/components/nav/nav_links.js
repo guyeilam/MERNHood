@@ -1,33 +1,34 @@
 import React from "react";
 import Box from "../library/box";
-import Link from "../library/styledLink";
-import StyledSearchBar from "../library/styledSearchBar";
+import Button from "../library/styled_button";
+import Link from "../library/styled_link";
+import SearchBar from "../nav/search/react_select_search";
 
 export default function NavLinks(props) {
   return (
     <div>
-      <Box padding="18px">
+      <Box padding="10px">
         <ul className="logged-in-nav-container" style={{ display: "flex" }}>
           <li style={{ marginLeft: 10, minWidth: 350 }}>
-            <StyledSearchBar />
+            <SearchBar />
           </li>
-          <li style={{ padding: 2, paddingLeft: 10 }}>
+          <li style={{ padding: 10, paddingLeft: 140 }}>
             <Link to={"/"}>
               <p id="loggedInLink1">Home</p>
             </Link>
           </li>
-          <li style={{ padding: 2, paddingLeft: 10 }}>
+          <li style={{ padding: 10, paddingLeft: 10 }}>
             <Link to={"/"}>
               <p id="loggedInLink2">Notifications</p>
             </Link>
           </li>
-          <li style={{ padding: 2, paddingLeft: 10 }}>
+          <li style={{ padding: 10, paddingLeft: 10 }}>
             <Link to={"/"}>
               <p id="loggedInLink3">Account</p>
             </Link>
           </li>
-          <li style={{ position: "relative", left: "50vw" }}>
-            <button onClick={props.logoutUser}>Logout</button>
+          <li style={{ position: "relative", left: "2vw" }}>
+            <Button submit={props.logoutUser}>Logout</Button>
           </li>
         </ul>
       </Box>

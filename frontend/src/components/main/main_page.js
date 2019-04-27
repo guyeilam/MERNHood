@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../library/button";
+import Button from "../library/styled_button";
 import { Link } from "react-router-dom";
 import NavBar from "../nav/navbar_container";
 
@@ -47,7 +47,7 @@ class MainPage extends React.Component {
               desktop.
             </p>
             <Link to="/signup">
-              <Button title="Sign Up" />
+              <Button>Sign Up</Button>
             </Link>
           </div>
           <img

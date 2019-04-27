@@ -1,0 +1,344 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button colored 1`] = `
+<div
+  className="sc-bZQynM ciNqHY"
+>
+  <div>
+    <button
+      className="sc-gzVnrw hQrwQV"
+      onClick={[Function]}
+    >
+      Colored
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button default 1`] = `
+<div
+  className="sc-ifAKCX kdSFjR"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "left",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Available props:
+    </p>
+    <p>
+       children, color, square, large, bold, submit, disabled
+    </p>
+    <br />
+  </div>
+  <div>
+    <button
+      className="sc-EHOje fgZRzo"
+      onClick={[Function]}
+    >
+      Default
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button disabled 1`] = `
+<div
+  className="sc-gqjmRU jyqcmm"
+>
+  <div>
+    <button
+      className="sc-VigVT fWmdfs"
+      onClick={[Function]}
+    >
+      Disabled
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button large 1`] = `
+<div
+  className="sc-iwsKbI jAnpHx"
+>
+  <div>
+    <button
+      className="sc-gZMcBi hmXhKo"
+      onClick={[Function]}
+    >
+      Large
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button square 1`] = `
+<div
+  className="sc-htoDjs iTLDCV"
+>
+  <div>
+    <button
+      className="sc-dnqmqq jKMcNU"
+      onClick={[Function]}
+    >
+      Square
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropDown default 1`] = `
+<div
+  className="sc-jTzLTM koqGBN"
+>
+  <div>
+    <button
+      aria-haspopup="true"
+      className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label-4"
+      >
+        Toggle
+      </span>
+      <span
+        className="MuiTouchRipple-root-32"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Link colored 1`] = `
+<div
+  className="sc-kAzzGY cgEADK"
+>
+  <a
+    activeclassname="nav-item-active"
+    className="sc-chPdSV cAyWCj"
+    href="/"
+    onClick={[Function]}
+  >
+    home
+  </a>
+</div>
+`;
+
+exports[`Storyshots Link default 1`] = `
+<div
+  className="sc-jzJRlG lgCvxV"
+>
+  <a
+    activeclassname="nav-item-active"
+    className="sc-cSHVUG UUmJr"
+    href="/"
+    onClick={[Function]}
+  >
+    home
+  </a>
+</div>
+`;
+
+exports[`Storyshots Loader default 1`] = `
+<div
+  className="sc-htpNat ecPpso"
+>
+  <div
+    className="sc-bxivhb jMMVmf"
+  />
+</div>
+`;
+
+exports[`Storyshots Logo default 1`] = `
+<div
+  className="sc-kgoBCf fqKiXK"
+>
+  <div
+    className="sc-kGXeez iaCHqu"
+  >
+    <a
+      activeclassname="nav-item-active"
+      className="sc-kpOJdX dKZNZM"
+      href="/"
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "paddingRight": 5,
+            "paddingTop": 9,
+          }
+        }
+      >
+        <svg
+          className="feather feather-feather"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "paddingRight": 5,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"
+          />
+          <line
+            x1="16"
+            x2="2"
+            y1="8"
+            y2="22"
+          />
+          <line
+            x1="17.5"
+            x2="9"
+            y1="15"
+            y2="15"
+          />
+        </svg>
+        <p>
+          mernhood
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Search default 1`] = `
+<div
+  className="sc-dxgOiQ ispcJL"
+>
+  <div
+    className="css-1pcexqc-container sc-bwzfXH hlsaAl"
+    onKeyDown={[Function]}
+  >
+    <div
+      className="css-uymyop-control"
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+    >
+      <div
+        className="css-1hwfws3"
+      >
+        <div
+          className="css-151xaom-placeholder"
+        >
+          Search
+        </div>
+        <div
+          className="css-1g6gooi"
+        >
+          <div
+            className=""
+            style={
+              Object {
+                "display": "inline-block",
+              }
+            }
+          >
+            <input
+              aria-autocomplete="list"
+              autoCapitalize="none"
+              autoComplete="off"
+              autoCorrect="off"
+              disabled={false}
+              id="react-select-2-input"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              spellCheck="false"
+              style={
+                Object {
+                  "background": 0,
+                  "border": 0,
+                  "boxSizing": "content-box",
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "label": "input",
+                  "opacity": 1,
+                  "outline": 0,
+                  "padding": 0,
+                  "width": "1px",
+                }
+              }
+              tabIndex="0"
+              type="text"
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "scroll",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                  "whiteSpace": "pre",
+                }
+              }
+            >
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1wy0on6"
+      >
+        <span />
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-search fa-w-16 sc-bdVaJa iDZiAc"
+          data-icon="search"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

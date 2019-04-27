@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../library/styledLogo";
-import NoUserLinks from "./noUserNavLinks";
-import NavLinks from "../nav/navLinks";
+import Logo from "../library/styled_logo";
+import NoUserLinks from "./no_user_nav_links";
+import NavLinks from "../nav/nav_links";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class NavBar extends React.Component {
   }
 
   logoutUser(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.props.logout();
   }
 
@@ -31,6 +31,7 @@ class NavBar extends React.Component {
       flex-direction: row;
       margin: auto;
       list-style: none;
+      padding: 10px;
     `;
 
     return (

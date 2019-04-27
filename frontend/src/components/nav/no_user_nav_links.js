@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "../library/styledButton";
-import Link from "../library/styledLink";
-import ExternalLink from "../library/styledExternalLink";
-import DropDown from "../library/styledDropDown";
+import Button from "../library/styled_button";
+import Link from "../library/styled_link";
+import DropDown from "../library/styled_dropdown";
 import styled from "styled-components";
 import StyledExternalLink from "../library/styledExternalLink";
 

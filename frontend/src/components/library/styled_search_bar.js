@@ -5,11 +5,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function styledSearchBar() {
   const StyledInput = styled.input`
     min-width: 400px;
+    padding: 10px;
 
     :focus::placeholder {
       color: transparent;
     }
   `;
+
+  const StyledIcon = styled(FontAwesomeIcon)`
+    position: relative;
+    top: 5px;
+    right: 4px;
+    color: black;
+    padding: 10px;
+  `;
+
   const StyledDiv = styled.div`
     flex-basis: auto;
     display: flex;
@@ -25,20 +35,12 @@ export default function styledSearchBar() {
       box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.01),
         0 3px 24px rgba(48, 51, 51, 0.09);
     }
-    ${StyledInput}:focus: & ~ {
-      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.01),
-        0 3px 24px rgba(48, 51, 51, 0.09);
-    }
   `;
 
   return (
     <>
       <StyledDiv>
-        <FontAwesomeIcon
-          style={{ position: "relative", top: 8, right: 4 }}
-          icon="search"
-        />
-        {/* search bar */}
+        <StyledIcon icon="search" />
         <StyledInput placeholder="Search" />
       </StyledDiv>
     </>

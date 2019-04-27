@@ -1,8 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-import './login_form.css';
-
+import "./login_form.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -61,29 +60,32 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <div className="login-form-sidebar"></div>
+        <div className="login-form-sidebar" />
         <div className="login-form-content">
-        <form className="login-form-inputs" onSubmit={this.handleSubmit}>
-          <div className="login-form-inputs-content">
-              <div className="login-form-subheader">
-                Welcome to MERNHood
-              </div>
+          <form className="login-form-inputs" onSubmit={this.handleSubmit}>
+            <div className="login-form-inputs-content">
+              <div className="login-form-subheader">Welcome to MERNHood</div>
 
-            <div className="login-form-inputs-row">
-              <div className="login-form-inputs-label">
-                Email or Username
+              <div className="login-form-inputs-row">
+                <div className="login-form-inputs-label">Email or Username</div>
+                <input
+                  className="login-form-input"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  required
+                />
               </div>
-              <input
-              className="login-form-input"
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              required
-            />
-            </div>
-            <div className="login-form-inputs-row">
-              <div className="login-form-inputs-label">
-                Password
+              <div className="login-form-inputs-row">
+                <div className="login-form-inputs-label">Password</div>
+                <input
+                  className="login-form-input"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  onClick={() => console.log("clicked")}
+                  required
+                />
               </div>
             <input
               className="login-form-input"
@@ -96,9 +98,9 @@ class LoginForm extends React.Component {
             <div className="login-form-inputs-row">
               <input className="signin-form-submit" type="submit" value="Sign In" />
               </div>
-            {this.renderErrors()}
-          </div>
-        </form>
+              {this.renderErrors()}
+            </div>
+          </form>
         </div>
       </div>
     );
