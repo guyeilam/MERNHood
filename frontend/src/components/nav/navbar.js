@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "../library/styledLogo";
-import NoUserLinks from "./noUserNavLinks";
+import NoUserLinks from "./no_user_nav_links";
 import NavLinks from "../nav/nav_links";
 
 class NavBar extends React.Component {
