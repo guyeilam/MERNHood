@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
 
 function AccountInfoForm({ fieldValues, saveValues }) {
   const [firstName, setFirstName] = useState(fieldValues.firstName);
