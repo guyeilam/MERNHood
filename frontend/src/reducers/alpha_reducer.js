@@ -8,9 +8,11 @@ import {
   RECEIVE_MONTHLY
 } from "../actions/alphavnatage_actions";
 
-const _nullData = {};
+import merge from "lodash";
 
-export default (state = _nullData, action) => {
+export const _nullAlphaState = {};
+
+export const alphaReducer = (state = _nullAlphaState, action) => {
   switch (action.type) {
     case RECEIVE_BATCH:
       return null;
@@ -22,7 +24,7 @@ export default (state = _nullData, action) => {
       return null;
     case RECEIVE_QUOTE:
       debugger;
-      return null;
+      return { ...state, data: action.data };
     case RECEIVE_RATE:
       return null;
     case RECEIVE_WEEKLY:

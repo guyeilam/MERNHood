@@ -11,50 +11,50 @@ export const RECEIVE_WEEKLY = "RECEIVE_WEEKLY";
 export const RECEIVE_MONTHLY = "RECEIVE_MONTHLY";
 
 // (timestamp, open, high, low, close, volume) of equity
-export const receiveIntraday = data => {
+export const receiveIntraday = payload => {
   return {
     type: RECEIVE_INTRADAY,
-    data
+    data: payload.data
   };
 };
 // intraDay of specified equities
-export const receiveBatch = data => {
+export const receiveBatch = payload => {
   return {
     type: RECEIVE_BATCH,
-    data
+    data: payload.data
   };
 };
 // current quote of equity
-export const receiveQuote = data => {
+export const receiveQuote = payload => {
   return {
     type: RECEIVE_QUOTE,
-    data
+    data: payload.data
   };
 };
 // any pair of digital (e.g., Bitcoin) or physical (e.g., USD)
-export const receiveRate = data => {
+export const receiveRate = payload => {
   return {
     type: RECEIVE_RATE,
-    data
+    data: payload.data
   };
 };
 // data on equity over specified period
-export const receiveDaily = data => {
+export const receiveDaily = payload => {
   return {
     type: RECEIVE_DAILY,
-    data
+    data: payload.data
   };
 };
-export const receiveWeekly = data => {
+export const receiveWeekly = payload => {
   return {
     type: RECEIVE_WEEKLY,
-    data
+    data: payload.data
   };
 };
-export const receiveMonthly = data => {
+export const receiveMonthly = payload => {
   return {
     type: RECEIVE_MONTHLY,
-    data
+    data: payload.data
   };
 };
 
@@ -62,11 +62,12 @@ export const fetchQuote = (
   symbol,
   outputsize,
   datatype,
-  interval
-) => dispatch => {
+  interval,
+  dispatch
+) => {
   return alpha.data
     .quote(symbol, outputsize, datatype, interval)
-    .then(results => dispatch(receiveQuote(results)))
+    .then(results => dispatch(receiveQuote(alpha.util.polish(results))))
     .catch(err => {
       dispatch(receiveErrors(err.response.data));
     });
