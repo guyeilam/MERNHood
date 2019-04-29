@@ -1,4 +1,4 @@
-import apiKeys from "../../../config/alphavantage_keys";
+import apiKeys from "../util/alphavantage_keys";
 import { receiveErrors } from "./session_actions";
 const alpha = require("alphavantage")({ key: apiKeys });
 
