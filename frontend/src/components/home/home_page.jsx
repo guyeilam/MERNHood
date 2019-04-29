@@ -7,8 +7,18 @@ import { alphaReducer } from "../../reducers/alpha_reducer";
 import { fetchQuote } from "../../actions/alphavnatage_actions";
 
 export default function HomePage() {
+  // ///////////////////////////////
+  //  This component really needs to be broken out into several
+  //  The button state and the useReducer should not coincide as much as they do.
+  //  This means breaking out in the near future specifically:
+  //  1) whatever component uses the fetch API &
+  //  2) Whatever buttons / components modify a slice of state that has
+  //  nothing to do with the slice of state that uses reducers
+  // ///////////////////////////////
+
   // react-hook state
   const [localState, setLoading] = useState({ loading: true, data: {} });
+  //  react-hook reducer
   const [state, dispatch] = useReducer(alphaReducer, localState);
 
   const Grid = styled.div`
