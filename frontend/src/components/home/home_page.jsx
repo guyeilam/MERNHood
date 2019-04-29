@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Box from "../library/box";
 import Loader from "../library/loaders/div_loader";
 import Button from "../library/styled_button";
 import styled from "styled-components";
