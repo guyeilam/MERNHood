@@ -8,7 +8,7 @@ import {
   RECEIVE_MONTHLY
 } from "../actions/alphavnatage_actions";
 
-import merge from "lodash";
+import { merge } from "lodash";
 
 export const _nullAlphaState = {};
 
@@ -23,8 +23,9 @@ export const alphaReducer = (state = _nullAlphaState, action) => {
     case RECEIVE_MONTHLY:
       return null;
     case RECEIVE_QUOTE:
+      const newState = merge({}, state, action.data);
       debugger;
-      return { ...state, data: action.data };
+      return newState;
     case RECEIVE_RATE:
       return null;
     case RECEIVE_WEEKLY:

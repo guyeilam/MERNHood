@@ -3,6 +3,7 @@ import Loader from "../library/loaders/div_loader";
 import Button from "../library/styled_button";
 import styled from "styled-components";
 import NavBar from "../nav/navbar_container";
+import WatchList from "../chart/watch_list_container";
 
 export default function HomePage() {
   // ///////////////////////////////
@@ -57,7 +58,8 @@ export default function HomePage() {
         </section>
         <section style={styles.column2} className="watching-container">
           <p>watching</p>
-          <LoadingContent />
+          {/* <LoadingContent /> */}
+          <WatchList />
         </section>
         <section style={styles.column1} className="top-movers-container">
           <p>top movers</p>

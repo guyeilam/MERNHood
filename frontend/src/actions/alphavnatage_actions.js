@@ -62,9 +62,8 @@ export const fetchQuote = (
   symbol,
   outputsize,
   datatype,
-  interval,
-  dispatch
-) => {
+  interval
+) => dispatch => {
   return alpha.data
     .quote(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveQuote(alpha.util.polish(results))))
