@@ -58,8 +58,7 @@ export default function HomePage() {
         </section>
         <section style={styles.column2} className="watching-container">
           <p>watching</p>
-          {/* <LoadingContent /> */}
-          <WatchList />
+          <LoadingContent />
         </section>
         <section style={styles.column1} className="top-movers-container">
           <p>top movers</p>
@@ -68,6 +67,10 @@ export default function HomePage() {
         <section style={styles.column1} className="news-container">
           <p>news</p>
           <LoadingContent />
+        </section>
+        <section style={styles.column1} className="tests">
+          <p>API tests</p>
+          <WatchList />
         </section>
         {/* Placeholder button, turns loading animation on / off */}
         <Button submit={() => setLoading({ loading: !localState.loading })}>
