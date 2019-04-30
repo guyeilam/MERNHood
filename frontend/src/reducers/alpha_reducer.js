@@ -24,7 +24,6 @@ export const alphaReducer = (state = _nullAlphaState, action) => {
       return null;
     case RECEIVE_QUOTE:
       const newState = merge({}, state, action.data);
-      debugger;
       return newState;
     case RECEIVE_RATE:
       return null;
