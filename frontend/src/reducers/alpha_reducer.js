@@ -23,7 +23,7 @@ export const alphaReducer = (state = _nullAlphaState, action) => {
     case RECEIVE_MONTHLY:
       return null;
     case RECEIVE_QUOTE:
-      const newState = merge({}, state, action.data);
+      const newState = merge({}, state, { [action.data.symbol]: action.data });
       return newState;
     case RECEIVE_RATE:
       return null;
