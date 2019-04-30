@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import StoryRouter from "storybook-react-router";
 // import { action } from '@storybook/addon-actions';
 
-import DropDown from "./styledDropDown";
+import DropDown from "./styled_drop_down";
 import Box from "./box";
 
 const stories = storiesOf("DropDown", module);

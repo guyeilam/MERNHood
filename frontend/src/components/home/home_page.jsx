@@ -1,10 +1,8 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import Loader from "../library/loaders/div_loader";
 import Button from "../library/styled_button";
 import styled from "styled-components";
 import NavBar from "../nav/navbar_container";
-import { alphaReducer } from "../../reducers/alpha_reducer";
-import { fetchQuote } from "../../actions/alphavnatage_actions";
 
 export default function HomePage() {
   // ///////////////////////////////
@@ -18,8 +16,6 @@ export default function HomePage() {
 
   // react-hook state
   const [localState, setLoading] = useState({ loading: true, data: {} });
-  //  react-hook reducer
-  const [state, dispatch] = useReducer(alphaReducer, localState);
 
   const Grid = styled.div`
     display: grid;
@@ -41,6 +37,7 @@ export default function HomePage() {
     }
   };
 
+  // whether or not to render loading dividers
   let LoadingContent;
   if (localState.loading) {
     LoadingContent = Loader;
@@ -70,20 +67,9 @@ export default function HomePage() {
           <p>news</p>
           <LoadingContent />
         </section>
-        <section>
-          <p>{String(Object.values(state.data))}</p>
-        </section>
         {/* Placeholder button, turns loading animation on / off */}
         <Button submit={() => setLoading({ loading: !localState.loading })}>
           Toggle Loading
-        </Button>
-        {/* Placeholder button, turns loading animation on / off */}
-        <Button
-          submit={() =>
-            fetchQuote("MSFT", "compact", "json", "60min", dispatch)
-          }
-        >
-          Fetch MSFT Quote
         </Button>
       </Grid>
     </>
