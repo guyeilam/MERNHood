@@ -134,3 +134,13 @@
   border-color: #199972;
 }
 
+.signup-form-back-button {
+  width: 60%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.signup-form-back-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
