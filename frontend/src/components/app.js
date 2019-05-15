@@ -2,7 +2,7 @@ import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch } from "react-router-dom";
 
-import "./reset.css";
+import "../styles/reset.css";
 import "./main.css";
 
 import MainPage from "./main/main_page";
