@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import StoryRouter from "storybook-react-router";
 // import { action } from '@storybook/addon-actions';
 
-import Logo from "./styledLogo";
+import Logo from "./styled_logo";
 import Box from "./box";
 
 const stories = storiesOf("Logo", module);
