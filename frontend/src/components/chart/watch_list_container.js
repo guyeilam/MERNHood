@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import WatchList from "./watch_list";
-import { fetchQuote } from "../../actions/alphavnatage_actions";
+import { fetchQuote } from "../../actions/alphavantage_actions";
 
 const msp = state => {
   return {

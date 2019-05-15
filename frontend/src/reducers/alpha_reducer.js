@@ -6,7 +6,7 @@ import {
   RECEIVE_DAILY,
   RECEIVE_WEEKLY,
   RECEIVE_MONTHLY
-} from "../actions/alphavnatage_actions";
+} from "../actions/alphavantage_actions";
 
 import { merge } from "lodash";
 
