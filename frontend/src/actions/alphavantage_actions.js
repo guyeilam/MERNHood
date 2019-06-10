@@ -99,7 +99,7 @@ export const fetchQuote = (
     .quote(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveQuote(alpha.util.polish(results))))
     .catch(err => {
-      dispatch(receiveErrors(err.response.data));
+      dispatch(receiveErrors(err));
     });
 };
 
@@ -113,7 +113,7 @@ export const fetchIntraDay = (
     .intraday(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveIntraday(alpha.util.polish(results))))
     .catch(err => {
-      dispatch(receiveErrors(err.response.data));
+      dispatch(receiveErrors(err));
     });
 };
 
@@ -127,7 +127,7 @@ export const fetchWeekly = (
     .weekly(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveWeekly(alpha.util.polish(results))))
     .catch(err => {
-      dispatch(receiveErrors(err.response.data));
+      dispatch(receiveErrors(err));
     });
 };
 
@@ -141,6 +141,6 @@ export const fetchMonthly = (
     .weekly(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveMonthly(alpha.util.polish(results))))
     .catch(err => {
-      dispatch(receiveErrors(err.response.data));
+      dispatch(receiveErrors(err));
     });
 };
