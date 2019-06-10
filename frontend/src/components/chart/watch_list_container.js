@@ -1,6 +1,11 @@
 import { connect } from "react-redux";
 import WatchList from "./watch_list";
-import { fetchQuote } from "../../actions/alphavantage_actions";
+import {
+  fetchQuote,
+  fetchIntraDay,
+  fetchMonthly,
+  fetchWeekly
+} from "../../actions/alphavantage_actions";
 
 const msp = state => {
   return {
@@ -10,7 +15,10 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    fetchQuote: params => dispatch(fetchQuote(...params))
+    fetchQuote: params => dispatch(fetchQuote(...params)),
+    fetchIntraDay: params => dispatch(fetchIntraDay(...params)),
+    fetchWeekly: params => dispatch(fetchWeekly(...params)),
+    fetchMonthly: params => dispatch(fetchMonthly(...params))
   };
 };
 

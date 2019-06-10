@@ -24,13 +24,6 @@ export const receiveIntraday = payload => {
     data: payload.data
   };
 };
-// intraDay of specified equities
-export const receiveBatch = payload => {
-  return {
-    type: RECEIVE_BATCH,
-    data: payload.data
-  };
-};
 // current quote of equity
 export const receiveQuote = payload => {
   return {
@@ -67,6 +60,33 @@ export const receiveMonthly = payload => {
 
 //////////////////////////////////////////////
 // alpha vantage docs https://www.alphavantage.co/documentation/
+// npm alphavantage package docs https://github.com/zackurben/alphavantage
+
+// // Simple examples
+// alpha.data.intraday(`msft`).then(data => {
+//   console.log(data);
+// });
+
+// alpha.data.batch([`msft`, `aapl`]).then(data => {
+//   console.log(data);
+// });
+
+// alpha.forex.rate('btc', 'usd').then(data => {
+//   console.log(data);
+// })
+
+// alpha.crypto.daily('btc', 'usd').then(data => {
+//   console.log(data);
+// })
+
+// alpha.technical.sma(`msft`, `daily`, 60, `close`).then(data => {
+//   console.log(data);
+// })
+
+// alpha.performance.sector().then(data => {
+//   console.log(data);
+// });
+
 //////////////////////////////////////////////
 
 export const fetchQuote = (
@@ -78,6 +98,48 @@ export const fetchQuote = (
   return alpha.data
     .quote(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveQuote(alpha.util.polish(results))))
+    .catch(err => {
+      dispatch(receiveErrors(err.response.data));
+    });
+};
+
+export const fetchIntraDay = (
+  symbol,
+  outputsize,
+  datatype,
+  interval
+) => dispatch => {
+  return alpha.data
+    .intraday(symbol, outputsize, datatype, interval)
+    .then(results => dispatch(receiveIntraday(alpha.util.polish(results))))
+    .catch(err => {
+      dispatch(receiveErrors(err.response.data));
+    });
+};
+
+export const fetchWeekly = (
+  symbol,
+  outputsize,
+  datatype,
+  interval
+) => dispatch => {
+  return alpha.data
+    .weekly(symbol, outputsize, datatype, interval)
+    .then(results => dispatch(receiveWeekly(alpha.util.polish(results))))
+    .catch(err => {
+      dispatch(receiveErrors(err.response.data));
+    });
+};
+
+export const fetchMonthly = (
+  symbol,
+  outputsize,
+  datatype,
+  interval
+) => dispatch => {
+  return alpha.data
+    .weekly(symbol, outputsize, datatype, interval)
+    .then(results => dispatch(receiveMonthly(alpha.util.polish(results))))
     .catch(err => {
       dispatch(receiveErrors(err.response.data));
     });
