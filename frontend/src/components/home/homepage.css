@@ -1,0 +1,19 @@
+.main-container {
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container-row {
+  display: flex;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.sidebar-container {
+  width: 400px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.01), 0 3px 24px rgba(48, 51, 51, 0.09);
+}

@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import Button from "../library/styled_button";
 import { fetchQuote } from "../../actions/alphavantage_actions";
 
+import "./watchlist.css";
+
 export default function WatchList(props) {
-  //  react-hook reducer
   const [data, setData] = useState({ data: {} });
 
   const handleSubmit = () => {
@@ -14,9 +15,15 @@ export default function WatchList(props) {
   };
 
   return (
-    <div>
+    <div className="watchlist-container">
       {/* <p>{Object.values(data.data)}</p> */}
-      <Button submit={handleSubmit}>Fetch MSFT Quote</Button>
+      {/* <Button submit={handleSubmit}>Fetch MSFT Quote</Button> */}
+      <div className="watchlist-content-header">
+        Stocks
+      </div>
+      <div className="watchlist-content-header-menu">
+        ...
+      </div>
     </div>
   );
 }

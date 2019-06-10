@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import Loader from "../library/loaders/div_loader";
-import Button from "../library/styled_button";
-import styled from "styled-components";
-import NavBar from "../nav/navbar_container";
-import WatchList from "../chart/watch_list_container";
+import React, {useState} from 'react';
+import Loader from '../library/loaders/div_loader';
+import Button from '../library/styled_button';
+import styled from 'styled-components';
+import NavBar from '../nav/navbar_container';
+import WatchList from '../chart/watch_list_container';
+
+import './homepage.css';
 
 export default function HomePage() {
   // ///////////////////////////////
@@ -16,7 +18,7 @@ export default function HomePage() {
   // ///////////////////////////////
 
   // react-hook state
-  const [localState, setLoading] = useState({ loading: true, data: {} });
+  const [localState, setLoading] = useState({loading: true, data: {}});
 
   const Grid = styled.div`
     display: grid;
@@ -29,13 +31,13 @@ export default function HomePage() {
 
   const styles = {
     column1: {
-      gridColumn: "1",
-      padding: 10
+      gridColumn: '1',
+      padding: 10,
     },
     column2: {
-      gridColumn: "2",
-      padding: 10
-    }
+      gridColumn: '2',
+      padding: 10,
+    },
   };
 
   // whether or not to render loading dividers
@@ -51,32 +53,42 @@ export default function HomePage() {
   return (
     <>
       <NavBar />
-      <Grid>
-        <section style={styles.column1} className="chart-container">
-          <p>chart</p>
-          <LoadingContent />
-        </section>
-        <section style={styles.column2} className="watching-container">
-          <p>watching</p>
-          <LoadingContent />
-        </section>
-        <section style={styles.column1} className="top-movers-container">
-          <p>top movers</p>
-          <LoadingContent />
-        </section>
-        <section style={styles.column1} className="news-container">
-          <p>news</p>
-          <LoadingContent />
-        </section>
-        <section style={styles.column1} className="tests">
-          <p>API tests</p>
-          <WatchList />
-        </section>
-        {/* Placeholder button, turns loading animation on / off */}
-        <Button submit={() => setLoading({ loading: !localState.loading })}>
-          Toggle Loading
-        </Button>
-      </Grid>
+
+      <div className="main-container">
+        <div className="main-container-row">
+          <div className="chart-container" />
+          <div className="sidebar-container">
+            <WatchList />
+          </div>
+        </div>
+        <div className="main-container-row">
+          <Grid>
+            <section style={styles.column1} className="chart-container">
+              <p>chart</p>
+              <LoadingContent />
+            </section>
+            <section style={styles.column2} className="watching-container">
+              <p>watching</p>
+              <LoadingContent />
+            </section>
+            <section style={styles.column1} className="top-movers-container">
+              <p>top movers</p>
+              <LoadingContent />
+            </section>
+            <section style={styles.column1} className="news-container">
+              <p>news</p>
+              <LoadingContent />
+            </section>
+            <section style={styles.column1} className="tests">
+              <p>API tests</p>
+            </section>
+            {/* Placeholder button, turns loading animation on / off */}
+            <Button submit={() => setLoading({loading: !localState.loading})}>
+              Toggle Loading
+            </Button>
+          </Grid>
+        </div>
+      </div>
     </>
   );
 }
