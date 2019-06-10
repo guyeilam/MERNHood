@@ -103,20 +103,6 @@ export const fetchQuote = (
     });
 };
 
-export const fetchIntraDay = (
-  symbol,
-  outputsize,
-  datatype,
-  interval
-) => dispatch => {
-  return alpha.data
-    .intraday(symbol, outputsize, datatype, interval)
-    .then(results => dispatch(receiveIntraday(alpha.util.polish(results))))
-    .catch(err => {
-      dispatch(receiveErrors(err));
-    });
-};
-
 export const fetchWeekly = (
   symbol,
   outputsize,

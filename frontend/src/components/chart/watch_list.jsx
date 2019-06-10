@@ -11,11 +11,6 @@ export default function WatchList(props) {
       .fetchQuote("MSFT", "compact", "json", "60min")
       .then(result => setData({ data: result }));
   };
-  const fetchIntraDay = () => {
-    props
-      .fetchIntraDay("MSFT", "compact", "json", "60min")
-      .then(result => setData({ data: result }));
-  };
   const fetchWeekly = () => {
     props
       .fetchWeekly("MSFT", "compact", "json", "60min")
@@ -31,8 +26,6 @@ export default function WatchList(props) {
     <div>
       {/* <p>{Object.values(data.data)}</p> */}
       <Button submit={fetchQuote}>Fetch MSFT Quote</Button>
-      <br />
-      <Button submit={fetchIntraDay}>Fetch MSFT IntraDay</Button>
       <br />
       <Button submit={fetchWeekly}>Fetch MSFT Weekly</Button>
       <br />
