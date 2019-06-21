@@ -4,7 +4,7 @@ import Chart from "./chart";
 const msp = (state, ownProps) => {
   return {
     state: state,
-    props: ownProps
+    data: ownProps.data
   };
 };
 
