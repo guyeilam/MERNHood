@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import styled from "styled-components";
 import Button from "../library/styled_button";
 
-class WatchList extends React.Component {
+class WatchList extends Component {
   constructor(props) {
     super(props);
     this.state = { data: {} };
