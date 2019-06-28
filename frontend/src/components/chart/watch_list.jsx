@@ -9,7 +9,21 @@ const WatchList = (props) => {
   const fetchQuote = () => {
     props
       .fetchQuote("MSFT", "compact", "json", "60min")
-      .then(result => setData(result));
+      .then(result => {
+        let dataLabels = Object.keys(result.data);
+        let dataValues = Object.values(result.data).map(date => {
+            return date.close;
+          });
+        setChartData({
+          labels: dataLabels,
+          datasets: [
+            {
+              label: 'Closing price',
+              data: dataValues
+            }
+          ]
+        });
+      });
   }
 
   const fetchWeekly = () => {

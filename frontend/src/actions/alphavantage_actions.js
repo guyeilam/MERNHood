@@ -1,5 +1,7 @@
 import apiKeys from "../util/alphavantage_keys";
 import { receiveErrors } from "./session_actions";
+import { saveStockPriceData } from "../util/api_data_util";
+
 const alpha = require("alphavantage")({ key: apiKeys });
 
 export const RECEIVE_INTRADAY = "RECEIVE_INTRADAY";
@@ -97,7 +99,11 @@ export const fetchQuote = (
 ) => dispatch => {
   return alpha.data
     .quote(symbol, outputsize, datatype, interval)
-    .then(results => dispatch(receiveQuote(alpha.util.polish(results))))
+    .then(results => {
+      let polishedData = alpha.util.polish(results);
+      saveStockPriceData(polishedData);
+      return dispatch(receiveQuote(polishedData));
+    })
     .catch(err => {
       dispatch(receiveErrors(err));
     });
