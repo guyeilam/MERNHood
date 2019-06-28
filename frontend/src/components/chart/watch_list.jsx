@@ -1,42 +1,46 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Button from "../library/styled_button";
 import Chart from "../chart/chart_container";
 
-class WatchList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {},
-      chartData: {}
-    };
+const WatchList = (props) => {
+  const [data, setData] = useState({});
+  const [chartData, setChartData] = useState({});
 
-    this.fetchQuote = this.fetchQuote.bind(this);
-    this.fetchWeekly = this.fetchWeekly.bind(this);
-    this.fetchMonthly = this.fetchMonthly.bind(this);
-  }
-
-  fetchQuote() {
-    this.props
+  const fetchQuote = () => {
+    props
       .fetchQuote("MSFT", "compact", "json", "60min")
-      .then(result => this.setState({ data: result }));
+      .then(result => setData(result));
   }
 
-  fetchWeekly() {
-    this.props
+  const fetchWeekly = () => {
+    props
       .fetchWeekly("MSFT", "compact", "json", "60min")
-      .then(result => this.setState({ data: result }));
+      .then(result => {
+        let dataLabels = Object.keys(result.data);
+        let dataValues = Object.values(result.data).map(date => {
+            return date.close;
+          });
+        setChartData({
+          labels: dataLabels,
+          datasets: [
+            {
+              label: 'Closing price',
+              data: dataValues
+            }
+          ]
+        });
+      });
   }
 
-  fetchMonthly() {
-    this.props
+  const fetchMonthly = () => {
+    props
       .fetchMonthly("MSFT", "compact", "json", "60min")
       .then(result => {
         let dataLabels = Object.keys(result.data);
         let dataValues = Object.values(result.data).map(date => {
             return date.close;
           });
-        this.setState({
-          chartData: {
+        setChartData({
             labels: dataLabels,
             datasets: [
               {
@@ -44,24 +48,21 @@ class WatchList extends Component {
                 data: dataValues
               }
             ]
-          }
         });
       });
   }
 
-  render() {
-    return (
-      <div>
-        <Button submit={this.fetchQuote}>Fetch MSFT Quote</Button>
-        <br />
-        <Button submit={this.fetchWeekly}>Fetch MSFT Weekly</Button>
-        <br />
-        <Button submit={this.fetchMonthly}>Fetch MSFT Monthly</Button>
-        <br />
-        <Chart data={this.state.chartData}/>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Button submit={fetchQuote}>Fetch MSFT Quote</Button>
+      <br />
+      <Button submit={fetchWeekly}>Fetch MSFT Weekly</Button>
+      <br />
+      <Button submit={fetchMonthly}>Fetch MSFT Monthly</Button>
+      <br />
+      <Chart data={chartData}/>
+    </div>
+  );
 }
 
 export default WatchList;

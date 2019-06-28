@@ -124,7 +124,7 @@ export const fetchMonthly = (
   interval
 ) => dispatch => {
   return alpha.data
-    .weekly(symbol, outputsize, datatype, interval)
+    .monthly(symbol, outputsize, datatype, interval)
     .then(results => dispatch(receiveMonthly(alpha.util.polish(results))))
     .catch(err => {
       dispatch(receiveErrors(err));
