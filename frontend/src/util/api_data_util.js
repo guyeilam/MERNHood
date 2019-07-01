@@ -1,14 +1,13 @@
 import axios from 'axios';
 
 export const getPrices = () => {
-  return axios.get('/api/dailyStockPrices')
+  return axios.get('/api/stocks')
 };
 
-export const saveStockPriceData = (data) => {
-  let dailyPriceData = {
-    ticker: data.data.symbol,
-    date: data.data.latest_trading_day,
-    closingPrice: data.data.price
+export const saveWeeklyData = (symbol, data) => {
+  let stockData = {
+    symbol: symbol,
+    price_data: data
   };
 
   // Object.keys(data.data).forEach(date => {
@@ -18,6 +17,6 @@ export const saveStockPriceData = (data) => {
   //   });
   // });
 
-  return axios.post('/api/dailyStockPrices', dailyPriceData);
+  return axios.post('/api/stocks', stockData);
 
 }

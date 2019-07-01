@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
-const dailyStockPrices = require("./routes/api/dailyStockPrices");
+const stocks = require("./routes/api/stocks");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
@@ -13,12 +13,10 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-
-  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/api/users", users);
-app.use("/api/dailyStockPrices", dailyStockPrices);
+app.use("/api/stocks", stocks);
 app.use(passport.initialize());
 require('./config/passport')(passport);
 // app.get("/", (req, res) => res.send("Hey World"));

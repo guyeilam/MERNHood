@@ -1,24 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const passport = require('passport');
 
-const DailyStockPrice = require('../../models/DailyStockPrice');
+const DailyPrice = require('../../models/DailyPrice');
 
 router.get('/', (req, res) => {
-  DailyStockPrice.find()
+  DailyPrice.find()
   .then(data => res.json(data));
 });
 
 router.post('/', (req, res) => {
-  
-  const newStockPrice = new DailyStockPrice({
+  const newDailyPrice = new DailyPrice({
     ticker: req.body.ticker,
     date: req.body.date,
     closingPrice: req.body.closingPrice
   });
 
-  newStockPrice.save().then(() => console.log("Saved!"));
+  newDailyPrice.save();
 });
 
 module.exports = router;
