@@ -11,7 +11,6 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFeatherAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faFeatherAlt, faSearch);

@@ -1,6 +1,6 @@
 import apiKeys from "../util/alphavantage_keys";
 import { receiveErrors } from "./session_actions";
-import { saveWeeklyData } from "../util/api_data_util";
+import { saveWeeklyData, saveDailyData } from "../util/api_data_util";
 
 const alpha = require("alphavantage")({ key: apiKeys });
 
@@ -100,7 +100,10 @@ export const fetchQuote = (
   return alpha.data
     .quote(symbol, outputsize, datatype, interval)
     .then(results => {
+      
       let polishedData = alpha.util.polish(results);
+      let symbol = polishedData.data.symbol;
+      saveDailyData(symbol, polishedData.data);
       return dispatch(receiveQuote(polishedData));
     })
     .catch(err => {
@@ -119,9 +122,9 @@ export const fetchWeekly = (
     .then(results => {
       let polishedData = alpha.util.polish(results);
       let symbol = polishedData.meta.symbol;
-      debugger
+
       saveWeeklyData(symbol, polishedData.data);
-      dispatch(receiveWeekly(polishedData));
+      return dispatch(receiveWeekly(polishedData));
     })
     .catch(err => {
       dispatch(receiveErrors(err));

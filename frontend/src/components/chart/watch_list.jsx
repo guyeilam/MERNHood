@@ -10,10 +10,9 @@ const WatchList = (props) => {
     props
       .fetchQuote("MSFT", "compact", "json", "60min")
       .then(result => {
-        let dataLabels = Object.keys(result.data);
-        let dataValues = Object.values(result.data).map(date => {
-            return date.close;
-          });
+        debugger
+        let dataLabels = [result.latest_trading_day];
+        let dataValues = [result.price];
         setChartData({
           labels: dataLabels,
           datasets: [

@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const newStock = new Stock({
     symbol: req.body.symbol,
-    price_data: req.body.data
+    price_data: req.body.price_data
   });
 
-  newDailyPrice.save();
+  newStock.save();
 });
 
 module.exports = router;
