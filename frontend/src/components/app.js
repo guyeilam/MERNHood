@@ -17,14 +17,12 @@ import { faFeatherAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
 library.add(faFeatherAlt, faSearch);
 
 const App = () => (
-  <>
-    <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
-      <ProtectedRoute exact path="/home" component={HomePage} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    </Switch>
-  </>
+  <Switch>
+    <AuthRoute exact path="/" component={MainPage} />
+    <ProtectedRoute exact path="/home" component={HomePage} />
+    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+  </Switch>
 );
 
 export default App;

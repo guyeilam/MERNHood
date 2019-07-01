@@ -19,7 +19,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push("/tweets");
+      this.props.history.push("/home");
     }
 
     // Set or clear errors
@@ -85,7 +85,6 @@ class LoginForm extends React.Component {
                   type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
-                  onClick={() => console.log("clicked")}
                   required
                 />
               </div>
